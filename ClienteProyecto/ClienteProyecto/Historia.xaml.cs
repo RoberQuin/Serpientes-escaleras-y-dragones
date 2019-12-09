@@ -1,26 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace ClienteProyecto {
+
     /// <summary>
     /// Lógica de interacción para Historia.xaml
     /// </summary>
     public partial class Historia : Window {
-        int idioma;
-        int idJugador;
-        int img;
-        int estado;
+        private int idioma;
+        private int idJugador;
+        private int img;
+        private int estado;
+
         public Historia() {
             InitializeComponent();
         }
@@ -41,7 +33,7 @@ namespace ClienteProyecto {
                 explicacionIMG.Content = Properties.Resources.labelExplicacion3;
             }
             if (v == 7) {
-                fondoIMG.Source = new BitmapImage(new Uri("Imagenes/explicacion4.png",UriKind.Relative));
+                fondoIMG.Source = new BitmapImage(new Uri("Imagenes/explicacion4.png", UriKind.Relative));
                 explicacionIMG.Content = Properties.Resources.labelExplicacion3;
             }
             if (v == 10) {
@@ -62,33 +54,48 @@ namespace ClienteProyecto {
             switch (estado) {
                 case 0: {
                     estado0();
-                }break;
+                }
+                break;
+
                 case 1: {
                     estado1();
-                }break;
+                }
+                break;
+
                 case 3: {
                     estado3();
-                }break;
+                }
+                break;
+
                 case 7: {
                     estado7();
-                }break;
+                }
+                break;
+
                 case 10: {
                     estado10();
-                }break;
+                }
+                break;
+
                 case 13: {
                     estado13();
-                }break;
+                }
+                break;
+
                 case 16: {
                     estado16();
-                }break;
+                }
+                break;
+
                 case 17: {
                     estado17();
-                }break;
+                }
+                break;
             }
         }
 
         /// <summary>
-        /// metodo que manda al juego con estado 14 
+        /// metodo que manda al juego con estado 14
         /// </summary>
         private void estado13() {
             ServiceReference4.Service1Client service = new ServiceReference4.Service1Client();
@@ -117,7 +124,7 @@ namespace ClienteProyecto {
         /// </summary>
         private void estado17() {
             ServiceReference4.Service1Client service = new ServiceReference4.Service1Client();
-            service.SetCampaniaJugador(idJugador,0);
+            service.SetCampaniaJugador(idJugador, 0);
         }
 
         /// <summary>
@@ -188,7 +195,7 @@ namespace ClienteProyecto {
             explicacionIMG.Content = Properties.Resources.labelExplicacion2;
             this.estado = 1;
             ServiceReference4.Service1Client service = new ServiceReference4.Service1Client();
-            service.SetCampaniaJugador(idJugador,1);
+            service.SetCampaniaJugador(idJugador, 1);
         }
 
         /// <summary>

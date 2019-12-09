@@ -7,9 +7,8 @@
         mc:Ignorable="d"
         Title="Historia" WindowState="Maximized" Width="1366" Height="768">
     <Grid>
-        <Image x:Name="fondoIMG" HorizontalAlignment="Left" Height="768" VerticalAlignment="Top" Width="1366"/>
-        <Label x:Name="explicacionIMG" Content="Label" HorizontalAlignment="Left" Margin="10,635,0,0" VerticalAlignment="Top" Height="92" Width="1338" FontSize="20" Foreground="White"/>
-        <Button x:Name="continuar" Content="Continuar" HorizontalAlignment="Left" Margin="1252,581,0,0" VerticalAlignment="Top" Width="75" Click="continuar_Click"/>
-
+        <Image x:Name="fondoIMG" HorizontalAlignment="Left" Height="768" VerticalAlignment="Top" Width="1366" />
+        <Label x:Name="explicacionIMG" Content="Label" HorizontalAlignment="Left" Margin="10,635,0,0" VerticalAlignment="Top" Height="92" Width="1338" FontSize="20" Foreground="White" />
+        <Button x:Name="continuar" Content="Continuar" HorizontalAlignment="Left" Margin="1252,581,0,0" VerticalAlignment="Top" Width="75" Click="continuar_Click" />
     </Grid>
 </Window>

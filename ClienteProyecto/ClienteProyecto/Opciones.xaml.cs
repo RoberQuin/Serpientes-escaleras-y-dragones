@@ -1,27 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace ClienteProyecto {
+
     /// <summary>
     /// Lógica de interacción para Opciones.xaml
     /// </summary>
     public partial class Opciones : Window {
-        int idioma;
-        int idJugador;
-        int respaldo;
-        int ficha=0;
-        int respaldoFicha=0;
+        private int idioma;
+        private int idJugador;
+        private int respaldo;
+        private int ficha = 0;
+        private int respaldoFicha = 0;
+
         public Opciones() {
             InitializeComponent();
         }
@@ -43,7 +35,7 @@ namespace ClienteProyecto {
         /// </summary>
         /// <param name="idJugador">id del jugador</param>
         /// <param name="estado">estado de campaña</param>
-        public void getID(int idJugador,int estado) {
+        public void getID(int idJugador, int estado) {
             this.idJugador = idJugador;
             if (estado == 0) {
                 ServiceReference4.Service1Client service = new ServiceReference4.Service1Client();
@@ -61,21 +53,25 @@ namespace ClienteProyecto {
         private void PintarFicha(int ficha) {
             switch (ficha) {
                 case 0: {
-                    fichaIMG.Source = new BitmapImage(new Uri("Imagenes/ficha1.png",UriKind.Relative));
+                    fichaIMG.Source = new BitmapImage(new Uri("Imagenes/ficha1.png", UriKind.Relative));
                 }
                 break;
+
                 case 1: {
                     fichaIMG.Source = new BitmapImage(new Uri("Imagenes/ficha2.png", UriKind.Relative));
                 }
                 break;
+
                 case 2: {
                     fichaIMG.Source = new BitmapImage(new Uri("Imagenes/ficha3.png", UriKind.Relative));
                 }
                 break;
+
                 case 3: {
                     fichaIMG.Source = new BitmapImage(new Uri("Imagenes/ficha4.png", UriKind.Relative));
                 }
                 break;
+
                 case 4: {
                     fichaIMG.Source = new BitmapImage(new Uri("Imagenes/ficha5.png", UriKind.Relative));
                 }
@@ -98,7 +94,7 @@ namespace ClienteProyecto {
             Opciones opciones = new Opciones();
             opciones.respaldoFicha = ficha;
             opciones.ficha = ficha;
-            opciones.getID(this.idJugador,1);
+            opciones.getID(this.idJugador, 1);
             opciones.setIdioma(this.idioma);
             opciones.Show();
             this.Close();
@@ -110,13 +106,17 @@ namespace ClienteProyecto {
         }
 
         private void guardarBT_Click(object sender, RoutedEventArgs e) {
-            MenuPrincipal menuPrincipal = new MenuPrincipal();
-            ServiceReference4.Service1Client servicio = new ServiceReference4.Service1Client();
-            servicio.setOpciones(idJugador,idioma,ficha);
-            menuPrincipal.getID(idJugador);
-            menuPrincipal.setIdioma(idioma);
-            menuPrincipal.Show();
-            this.Close();
+            try {
+                MenuPrincipal menuPrincipal = new MenuPrincipal();
+                ServiceReference4.Service1Client servicio = new ServiceReference4.Service1Client();
+                servicio.setOpciones(idJugador, idioma, ficha);
+                menuPrincipal.getID(idJugador);
+                menuPrincipal.setIdioma(idioma);
+                menuPrincipal.Show();
+                this.Close();
+            } catch (Exception) {
+                MessageBox.Show("ocurrio un error inesperado", "error");
+            }
         }
 
         private void cancelarBT_Click(object sender, RoutedEventArgs e) {
@@ -134,21 +134,25 @@ namespace ClienteProyecto {
                     fichaIMG.Source = new BitmapImage(new Uri("Imagenes/ficha2.png", UriKind.Relative));
                 }
                 break;
+
                 case 1: {
                     ficha = 2;
                     fichaIMG.Source = new BitmapImage(new Uri("Imagenes/ficha3.png", UriKind.Relative));
                 }
                 break;
+
                 case 2: {
                     ficha = 3;
                     fichaIMG.Source = new BitmapImage(new Uri("Imagenes/ficha4.png", UriKind.Relative));
                 }
                 break;
+
                 case 3: {
                     ficha = 4;
                     fichaIMG.Source = new BitmapImage(new Uri("Imagenes/ficha5.png", UriKind.Relative));
                 }
                 break;
+
                 case 4: {
                     ficha = 0;
                     fichaIMG.Source = new BitmapImage(new Uri("Imagenes/ficha1.png", UriKind.Relative));
@@ -164,21 +168,25 @@ namespace ClienteProyecto {
                     fichaIMG.Source = new BitmapImage(new Uri("Imagenes/ficha5.png", UriKind.Relative));
                 }
                 break;
+
                 case 1: {
                     ficha = 0;
                     fichaIMG.Source = new BitmapImage(new Uri("Imagenes/ficha1.png", UriKind.Relative));
                 }
                 break;
+
                 case 2: {
                     ficha = 1;
                     fichaIMG.Source = new BitmapImage(new Uri("Imagenes/ficha2.png", UriKind.Relative));
                 }
                 break;
+
                 case 3: {
                     ficha = 2;
                     fichaIMG.Source = new BitmapImage(new Uri("Imagenes/ficha3.png", UriKind.Relative));
                 }
                 break;
+
                 case 4: {
                     ficha = 3;
                     fichaIMG.Source = new BitmapImage(new Uri("Imagenes/ficha4.png", UriKind.Relative));

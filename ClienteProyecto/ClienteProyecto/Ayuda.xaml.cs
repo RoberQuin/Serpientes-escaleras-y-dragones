@@ -1,29 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace ClienteProyecto {
+
     /// <summary>
     /// Clase ayuda
     /// La clase Ayuda permite generar los textos de ayuda y de acerca de, dependiendo del idioma usado
     /// </summary>
     public partial class Ayuda : Window {
-        int idioma;
+
+        /// <summary>
+        /// inicializa los valores iniciales de la clase
+        /// </summary>
         public Ayuda() {
             InitializeComponent();
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }
 
+        /// <summary>
+        /// metodo que cierra la ventana
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void aceptarBT_Click(object sender, RoutedEventArgs e) {
             this.Close();
         }
@@ -51,7 +48,6 @@ namespace ClienteProyecto {
              "software and user interface design" +
              "\n \n game not developed for profit and only for academic purposes" +
              "10/15/2019";
-            
         }
 
         /// <summary>

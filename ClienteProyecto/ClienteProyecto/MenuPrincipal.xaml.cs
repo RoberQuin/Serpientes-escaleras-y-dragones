@@ -1,24 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace ClienteProyecto {
+
     /// <summary>
     /// Lógica de interacción para MenuPrincipal.xaml
     /// </summary>
     public partial class MenuPrincipal : Window {
-        int idioma;
-        int idJugador;
+        private int idioma;
+        private int idJugador;
+
         public MenuPrincipal() {
             InitializeComponent();
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
@@ -33,6 +26,8 @@ namespace ClienteProyecto {
                 this.Close();
             } catch (System.ServiceModel.EndpointNotFoundException) {
                 MessageBox.Show("Hubo un error al conectar con el servidor", "Error en el host");
+            } catch (Exception) {
+                MessageBox.Show("ocurrio un error inesperado", "error");
             }
         }
 
@@ -58,7 +53,7 @@ namespace ClienteProyecto {
             } else {
                 ayuda.ayudaEspanol();
             }
-            
+
             ayuda.Show();
         }
 
@@ -69,7 +64,7 @@ namespace ClienteProyecto {
             } else {
                 ayuda.acercaEspanol();
             }
-            
+
             ayuda.Show();
         }
 
@@ -77,11 +72,13 @@ namespace ClienteProyecto {
             try {
                 Opciones opciones = new Opciones();
                 opciones.setIdioma(idioma);
-                opciones.getID(idJugador,0);
+                opciones.getID(idJugador, 0);
                 opciones.Show();
                 this.Close();
             } catch (System.ServiceModel.EndpointNotFoundException) {
                 MessageBox.Show("Hubo un error al conectar con el servidor", "Error en el host");
+            } catch (Exception) {
+                MessageBox.Show("ocurrio un error inesperado", "error");
             }
         }
 
@@ -92,6 +89,8 @@ namespace ClienteProyecto {
                 puntuaciones.Show();
             } catch (System.ServiceModel.EndpointNotFoundException) {
                 MessageBox.Show("Hubo un error al conectar con el servidor", "Error en el host");
+            } catch (Exception) {
+                MessageBox.Show("ocurrio un error inesperado", "error");
             }
         }
 
@@ -100,10 +99,10 @@ namespace ClienteProyecto {
         /// </summary>
         /// <param name="idioma">idioma del sistema</param>
         internal void setIdioma(int idioma) {
-            Console.WriteLine("11 "+idJugador);
+            Console.WriteLine("11 " + idJugador);
             ServiceReference4.Service1Client service = new ServiceReference4.Service1Client();
-            this.idioma=service.getIdiomaJugador(idJugador);
-            Console.WriteLine("el idioma es: "+this.idioma);
+            this.idioma = service.getIdiomaJugador(idJugador);
+            Console.WriteLine("el idioma es: " + this.idioma);
             if (this.idioma != 0) {
                 aplicarIdioma();
             }
@@ -121,7 +120,7 @@ namespace ClienteProyecto {
             salirBT.Content = Properties.Recursos.buttonSalir;
             tituloIG.Source = new BitmapImage(new
                 Uri("Imagenes/TituloImagenesEspanol" +
-                "RD.png",UriKind.Relative));
+                "RD.png", UriKind.Relative));
         }
 
         private void campaniaBT_Click(object sender, RoutedEventArgs e) {
@@ -133,6 +132,8 @@ namespace ClienteProyecto {
                 this.Close();
             } catch (System.ServiceModel.EndpointNotFoundException) {
                 MessageBox.Show("Hubo un error al conectar con el servidor", "Error en el host");
+            } catch (Exception) {
+                MessageBox.Show("ocurrio un error inesperado", "error");
             }
         }
 

@@ -10,28 +10,28 @@
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="#FFE6EAF7" Offset="0.013"/>
-                <GradientStop Color="#FF93ABEE" Offset="1"/>
-                <GradientStop Color="#FFAABCF1" Offset="0.935"/>
+                <GradientStop Color="#FFE6EAF7" Offset="0.013" />
+                <GradientStop Color="#FF93ABEE" Offset="1" />
+                <GradientStop Color="#FFAABCF1" Offset="0.935" />
             </LinearGradientBrush>
         </Grid.Background>
 
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="717" Margin="631,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="717"/>
-        <Image x:Name="tableroIMG" HorizontalAlignment="Left" Height="717" Margin="631,10,0,0" VerticalAlignment="Top" Width="717" Source="imagenes/Tablero1MT.png"/>
-        <Image x:Name="tuIMG" HorizontalAlignment="Left" Height="125" Margin="75,112,0,0" VerticalAlignment="Top" Width="120"/>
-        <Image x:Name="oponenteIMG" HorizontalAlignment="Left" Height="125" Margin="350,112,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label Content="" HorizontalAlignment="Center" Margin="408,536,806,0" VerticalAlignment="Top" FontSize="25" Height="44" Width="144"/>
-        <Image x:Name="dadoIMG" HorizontalAlignment="Left" Height="100" Margin="222,512,0,0" VerticalAlignment="Top" Width="100" Source="Imagenes/dado1.png"/>
-        <Button x:Name="tirarBT" Content="{x:Static p:Resources.buttonTirar}" HorizontalAlignment="Left" Margin="204,384,0,0" VerticalAlignment="Top" Width="141" Height="42" Click="tirarBT_Click" FontSize="25"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="717" Margin="631,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="717" />
+        <Image x:Name="tableroIMG" HorizontalAlignment="Left" Height="717" Margin="631,10,0,0" VerticalAlignment="Top" Width="717" Source="imagenes/Tablero1MT.png" />
+        <Image x:Name="tuIMG" HorizontalAlignment="Left" Height="125" Margin="75,112,0,0" VerticalAlignment="Top" Width="120" />
+        <Image x:Name="oponenteIMG" HorizontalAlignment="Left" Height="125" Margin="350,112,0,0" VerticalAlignment="Top" Width="120" />
+        <Label Content="" HorizontalAlignment="Center" Margin="408,536,806,0" VerticalAlignment="Top" FontSize="25" Height="44" Width="144" />
+        <Image x:Name="dadoIMG" HorizontalAlignment="Left" Height="100" Margin="222,512,0,0" VerticalAlignment="Top" Width="100" Source="Imagenes/dado1.png" />
+        <Button x:Name="tirarBT" Content="{x:Static p:Resources.buttonTirar}" HorizontalAlignment="Left" Margin="204,384,0,0" VerticalAlignment="Top" Width="141" Height="42" Click="tirarBT_Click" FontSize="25" />
         <Button HorizontalAlignment="Left" Margin="10,658,0,0" VerticalAlignment="Top" Width="79" Height="69" Click="Button_Click">
             <StackPanel>
                 <Image Source="imagenes/abandonar.png" Height="28" Width="24" RenderTransformOrigin="0.5,0.5">
                     <Image.RenderTransform>
                         <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform Angle="-181.541"/>
-                            <TranslateTransform/>
+                            <ScaleTransform />
+                            <SkewTransform />
+                            <RotateTransform Angle="-181.541" />
+                            <TranslateTransform />
                         </TransformGroup>
                     </Image.RenderTransform>
                 </Image>
@@ -39,35 +39,33 @@
         </Button>
         <Grid x:Name="tableroGD" HorizontalAlignment="Left" Height="717" Margin="631,10,0,0" VerticalAlignment="Top" Width="717">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="74*" x:Name="C1"/>
-                <ColumnDefinition Width="67*" x:Name="C2"/>
-                <ColumnDefinition Width="76*" x:Name="C3"/>
-                <ColumnDefinition Width="69*" x:Name="C4"/>
-                <ColumnDefinition Width="72*" x:Name="C5"/>
-                <ColumnDefinition Width="71*" x:Name="C6"/>
-                <ColumnDefinition Width="71*" x:Name="C7"/>
-                <ColumnDefinition Width="74*" x:Name="C8"/>
-                <ColumnDefinition Width="72*" x:Name="C9"/>
-                <ColumnDefinition Width="71*" x:Name="C10"/>
+                <ColumnDefinition Width="74*" x:Name="C1" />
+                <ColumnDefinition Width="67*" x:Name="C2" />
+                <ColumnDefinition Width="76*" x:Name="C3" />
+                <ColumnDefinition Width="69*" x:Name="C4" />
+                <ColumnDefinition Width="72*" x:Name="C5" />
+                <ColumnDefinition Width="71*" x:Name="C6" />
+                <ColumnDefinition Width="71*" x:Name="C7" />
+                <ColumnDefinition Width="74*" x:Name="C8" />
+                <ColumnDefinition Width="72*" x:Name="C9" />
+                <ColumnDefinition Width="71*" x:Name="C10" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="73*" x:Name="R1"/>
-                <RowDefinition Height="69*" x:Name="R2"/>
-                <RowDefinition Height="76*" x:Name="R3"/>
-                <RowDefinition Height="72*" x:Name="R4"/>
-                <RowDefinition Height="68*" x:Name="R5"/>
-                <RowDefinition Height="72*" x:Name="R6"/>
-                <RowDefinition Height="74*" x:Name="R7"/>
-                <RowDefinition Height="69*" x:Name="R8"/>
-                <RowDefinition Height="74*" x:Name="R9"/>
-                <RowDefinition Height="70*" x:Name="R10"/>
+                <RowDefinition Height="73*" x:Name="R1" />
+                <RowDefinition Height="69*" x:Name="R2" />
+                <RowDefinition Height="76*" x:Name="R3" />
+                <RowDefinition Height="72*" x:Name="R4" />
+                <RowDefinition Height="68*" x:Name="R5" />
+                <RowDefinition Height="72*" x:Name="R6" />
+                <RowDefinition Height="74*" x:Name="R7" />
+                <RowDefinition Height="69*" x:Name="R8" />
+                <RowDefinition Height="74*" x:Name="R9" />
+                <RowDefinition Height="70*" x:Name="R10" />
             </Grid.RowDefinitions>
-            <Image x:Name="fichaJugadorIMG" HorizontalAlignment="Center" Height="62" Width="62" Source="imagenes/enemigo5.png" Grid.Row="9" Grid.Column="0" Visibility="Visible"/>
-            <Image x:Name="fichaEnemigoIMG" HorizontalAlignment="Center" Height="62" Width="62" Source="imagenes/enemigo1.png" Grid.Row="9" Grid.Column="0" Visibility="Visible"/>
+            <Image x:Name="fichaJugadorIMG" HorizontalAlignment="Center" Height="62" Width="62" Source="imagenes/enemigo5.png" Grid.Row="9" Grid.Column="0" Visibility="Visible" />
+            <Image x:Name="fichaEnemigoIMG" HorizontalAlignment="Center" Height="62" Width="62" Source="imagenes/enemigo1.png" Grid.Row="9" Grid.Column="0" Visibility="Visible" />
         </Grid>
-        <Label x:Name="tuLB" Content="{x:Static p:Resources.labelTu}" HorizontalAlignment="Left" Margin="108,278,0,0" VerticalAlignment="Top" FontSize="25"/>
-        <Label x:Name="oponenteLB" Content="{x:Static p:Resources.labelOponente}" HorizontalAlignment="Left" Margin="366,278,0,0" VerticalAlignment="Top" FontSize="25"/>
-
-
+        <Label x:Name="tuLB" Content="{x:Static p:Resources.labelTu}" HorizontalAlignment="Left" Margin="108,278,0,0" VerticalAlignment="Top" FontSize="25" />
+        <Label x:Name="oponenteLB" Content="{x:Static p:Resources.labelOponente}" HorizontalAlignment="Left" Margin="366,278,0,0" VerticalAlignment="Top" FontSize="25" />
     </Grid>
 </Window>

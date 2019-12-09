@@ -1,44 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using WMPLib;
 
 namespace ClienteProyecto {
+
     /// <summary>
     /// Lógica de interacción para JuegoCampaña.xaml
     /// </summary>
     public partial class JuegoCampaña : Window {
-        List<ServiceReference4.Casilla> casillas = new List<ServiceReference4.Casilla>();
+        private List<ServiceReference4.Casilla> casillas = new List<ServiceReference4.Casilla>();
         public int idJugador;
         public int idioma;
         public int numeroCampania;
-        int posicionJugador;
-        int posicionEnemigo;
-        int estado;
-        int tiro;
-        int avance = 0;
+        private int posicionJugador;
+        private int posicionEnemigo;
+        private int estado;
+        private int tiro;
+        private int avance = 0;
         private WindowsMediaPlayer player = new WindowsMediaPlayer();
 
         /// <summary>
         /// contructor que define el estado inicial de las variables
         /// </summary>
         public JuegoCampaña() {
-                InitializeComponent();
-                posicionJugador = 1;
-                posicionEnemigo = 1;
-                estado = 0;
-                //oponenteIMG.Source = new BitmapImage(new Uri("Imagenes/enemigo1.png", UriKind.Relative));
+            InitializeComponent();
+            posicionJugador = 1;
+            posicionEnemigo = 1;
+            estado = 0;
+            //oponenteIMG.Source = new BitmapImage(new Uri("Imagenes/enemigo1.png", UriKind.Relative));
         }
 
         /// <summary>
@@ -57,6 +49,7 @@ namespace ClienteProyecto {
                     oponenteIMG.Source = new BitmapImage(new Uri("Imagenes/enemigo1.png", UriKind.Relative));
                 }
                 break;
+
                 case 5: {
                     avance = 5;
                     player.URL = @"Soundtrack/Level2.mp4";
@@ -67,6 +60,7 @@ namespace ClienteProyecto {
                     oponenteIMG.Source = new BitmapImage(new Uri("Imagenes/enemigo2.png", UriKind.Relative));
                 }
                 break;
+
                 case 8: {
                     avance = 8;
                     player.URL = @"Soundtrack/Level3.mp4";
@@ -77,6 +71,7 @@ namespace ClienteProyecto {
                     oponenteIMG.Source = new BitmapImage(new Uri("Imagenes/enemigo2.png", UriKind.Relative));
                 }
                 break;
+
                 case 11: {
                     avance = 11;
                     player.URL = @"Soundtrack/Level4.mp4";
@@ -87,6 +82,7 @@ namespace ClienteProyecto {
                     oponenteIMG.Source = new BitmapImage(new Uri("Imagenes/enemigo4.png", UriKind.Relative));
                 }
                 break;
+
                 case 14: {
                     avance = 14;
                     player.URL = @"Soundtrack/Level5.mp4";
@@ -97,12 +93,13 @@ namespace ClienteProyecto {
                     oponenteIMG.Source = new BitmapImage(new Uri("Imagenes/enemigo5.png", UriKind.Relative));
                 }
                 break;
-                default: {
-                    MessageBox.Show("Lo sentimos pero ocurrio un error inesperado y progreso se reinició","Ocurrio" +
-                        "un error");
-                }break;
-            }
 
+                default: {
+                    MessageBox.Show("Lo sentimos pero ocurrio un error inesperado y progreso se reinició", "Ocurrio" +
+                        "un error");
+                }
+                break;
+            }
         }
 
         /// <summary>
@@ -131,10 +128,10 @@ namespace ClienteProyecto {
             } else {
                 posicionEnemigo += tiro;
             }
-            
+
             foreach (ServiceReference4.Casilla casilla in casillas) {
                 if (casilla.NumeroCasillla == posicionEnemigo) {
-                    Console.WriteLine("E "+casilla.NumeroCasillla);
+                    Console.WriteLine("E " + casilla.NumeroCasillla);
                     if (casilla.NumeroCasillla == 100) {
                         MessageBox.Show("Perdiste", "Vuelve a intentarlo");
                         player.controls.stop();
@@ -164,7 +161,6 @@ namespace ClienteProyecto {
                         posicionEnemigo += casilla.CasillasCambios;
                     }
                     if (casilla.Tipo == 3) {
-                        
                         if (estado == 0) {
                             columnaDestino = casilla.Columna;
                             filaDestino = casilla.Fila;
@@ -175,17 +171,21 @@ namespace ClienteProyecto {
                                 estado = 1;
                                 switch (numeroCampania) {
                                     case 1:
-                                    tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero1D.png",UriKind.Relative));
+                                    tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero1D.png", UriKind.Relative));
                                     break;
+
                                     case 2:
-                                    tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero2_1D.png",UriKind.Relative));
+                                    tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero2_1D.png", UriKind.Relative));
                                     break;
+
                                     case 3:
-                                    tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero3D.png",UriKind.Relative));
+                                    tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero3D.png", UriKind.Relative));
                                     break;
+
                                     case 4:
-                                    tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero4D.png",UriKind.Relative));
+                                    tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero4D.png", UriKind.Relative));
                                     break;
+
                                     case 5:
                                     tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero5D.png", UriKind.Relative));
                                     break;
@@ -203,7 +203,7 @@ namespace ClienteProyecto {
                             filaDestino = casilla.Fila;
                         }
                     }
-                }else
+                } else
                 if (estado == 1) {
                     if (casilla.CasillaDestino == posicionEnemigo) {
                         if (casilla.Tipo == 3) {
@@ -214,24 +214,28 @@ namespace ClienteProyecto {
                             MessageBoxTemporal.Show("el enemigo cayó en un dragon", "Dragon", 0, true);
                             if (estado == 0) {
                                 estado = 1;
-                                tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero1D.png",UriKind.Relative));
+                                tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero1D.png", UriKind.Relative));
                             } else {
                                 estado = 0;
                                 switch (numeroCampania) {
                                     case 1:
-                                    tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero1MT.png",UriKind.Relative));
+                                    tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero1MT.png", UriKind.Relative));
                                     break;
+
                                     case 2:
-                                    tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero2_1.png",UriKind.Relative));
+                                    tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero2_1.png", UriKind.Relative));
                                     break;
+
                                     case 3:
-                                    tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero1D.png",UriKind.Relative));
+                                    tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero1D.png", UriKind.Relative));
                                     break;
+
                                     case 4:
-                                    tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero1D.png",UriKind.Relative));
+                                    tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero1D.png", UriKind.Relative));
                                     break;
+
                                     case 5:
-                                    tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero1D.png",UriKind.Relative));
+                                    tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero1D.png", UriKind.Relative));
                                     break;
                                 }
                             }
@@ -762,15 +766,19 @@ namespace ClienteProyecto {
                                         case 1:
                                         tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero1D.png", UriKind.Relative));
                                         break;
+
                                         case 2:
                                         tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero2_1D.png", UriKind.Relative));
                                         break;
+
                                         case 3:
                                         tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero3D.png", UriKind.Relative));
                                         break;
+
                                         case 4:
                                         tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero4D.png", UriKind.Relative));
                                         break;
+
                                         case 5:
                                         tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero5D.png", UriKind.Relative));
                                         break;
@@ -805,15 +813,19 @@ namespace ClienteProyecto {
                                         case 1:
                                         tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero1MT.png", UriKind.Relative));
                                         break;
+
                                         case 2:
                                         tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero2_1.png", UriKind.Relative));
                                         break;
+
                                         case 3:
                                         tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero1D.png", UriKind.Relative));
                                         break;
+
                                         case 4:
                                         tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero1D.png", UriKind.Relative));
                                         break;
+
                                         case 5:
                                         tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero1D.png", UriKind.Relative));
                                         break;
@@ -833,8 +845,11 @@ namespace ClienteProyecto {
                 tirarEnemigo();
             } catch (System.ServiceModel.EndpointNotFoundException) {
                 MessageBox.Show("Hubo un error al conectar con el servidor", "Error en el host");
+            } catch (Exception) {
+                MessageBox.Show("ocurrio un error inesperado", "error");
             }
         }
+
         /// <summary>
         /// metodo que define la interaccion cuando gana el jugador
         /// </summary>
@@ -852,6 +867,7 @@ namespace ClienteProyecto {
                     this.Close();
                 }
                 break;
+
                 case 5: {
                     service1Client.SetCampaniaJugador(idJugador, 7);
                     Historia historia = new Historia();
@@ -862,6 +878,7 @@ namespace ClienteProyecto {
                     this.Close();
                 }
                 break;
+
                 case 8: {
                     service1Client.SetCampaniaJugador(idJugador, 10);
                     Historia historia = new Historia();
@@ -872,6 +889,7 @@ namespace ClienteProyecto {
                     this.Close();
                 }
                 break;
+
                 case 11: {
                     service1Client.SetCampaniaJugador(idJugador, 13);
                     Historia historia = new Historia();
@@ -882,6 +900,7 @@ namespace ClienteProyecto {
                     this.Close();
                 }
                 break;
+
                 case 14: {
                     service1Client.SetCampaniaJugador(idJugador, 16);
                     Historia historia = new Historia();
@@ -892,6 +911,7 @@ namespace ClienteProyecto {
                     this.Close();
                 }
                 break;
+
                 default: {
                     MessageBox.Show("Lo sentimos pero ocurrio un error inesperado y progreso se reinició", "Ocurrio" +
                         "un error");
@@ -907,36 +927,44 @@ namespace ClienteProyecto {
         private void pintarDado(int tiro) {
             switch (tiro) {
                 case 1: {
-                    dadoIMG.Source= new BitmapImage(new Uri("Imagenes/dado1.png",UriKind.Relative));
+                    dadoIMG.Source = new BitmapImage(new Uri("Imagenes/dado1.png", UriKind.Relative));
                 }
                 break;
+
                 case 2: {
-                    dadoIMG.Source = new BitmapImage(new Uri("Imagenes/dado2.png",UriKind.Relative));
+                    dadoIMG.Source = new BitmapImage(new Uri("Imagenes/dado2.png", UriKind.Relative));
                 }
                 break;
+
                 case 3: {
-                    dadoIMG.Source = new BitmapImage(new Uri("Imagenes/dado3.png",UriKind.Relative));
+                    dadoIMG.Source = new BitmapImage(new Uri("Imagenes/dado3.png", UriKind.Relative));
                 }
                 break;
+
                 case 4: {
-                    dadoIMG.Source = new BitmapImage(new Uri("Imagenes/dado4.png",UriKind.Relative));
+                    dadoIMG.Source = new BitmapImage(new Uri("Imagenes/dado4.png", UriKind.Relative));
                 }
                 break;
+
                 case 5: {
-                    dadoIMG.Source = new BitmapImage(new Uri("Imagenes/dado5.png",UriKind.Relative));
+                    dadoIMG.Source = new BitmapImage(new Uri("Imagenes/dado5.png", UriKind.Relative));
                 }
                 break;
+
                 case 6: {
-                    dadoIMG.Source = new BitmapImage(new Uri("Imagenes/dado6.png",UriKind.Relative));
+                    dadoIMG.Source = new BitmapImage(new Uri("Imagenes/dado6.png", UriKind.Relative));
                 }
                 break;
+
                 default: {
                     Console.WriteLine("Error inesperado en el valor Random");
-                }break;
+                }
+                break;
             }
             //Thread.Sleep(500);
         }
-        System.Windows.Threading.DispatcherTimer timer = new System.Windows.Threading.DispatcherTimer();
+
+        private System.Windows.Threading.DispatcherTimer timer = new System.Windows.Threading.DispatcherTimer();
 
         /// <summary>
         /// metodo que cambia el contador del timer
@@ -975,22 +1003,25 @@ namespace ClienteProyecto {
                     fichaJugadorIMG.Source = new BitmapImage(new Uri("Imagenes/ficha1.png", UriKind.Relative));
                 }
                 break;
+
                 case 1: {
                     tuIMG.Source = new BitmapImage(new Uri("Imagenes/ficha2.png", UriKind.Relative));
                     fichaJugadorIMG.Source = new BitmapImage(new Uri("Imagenes/ficha2.png", UriKind.Relative));
                 }
                 break;
+
                 case 2: {
                     tuIMG.Source = new BitmapImage(new Uri("Imagenes/ficha3.png", UriKind.Relative));
                     fichaJugadorIMG.Source = new BitmapImage(new Uri("Imagenes/ficha3.png", UriKind.Relative));
-
                 }
                 break;
+
                 case 3: {
                     tuIMG.Source = new BitmapImage(new Uri("Imagenes/ficha4.png", UriKind.Relative));
                     fichaJugadorIMG.Source = new BitmapImage(new Uri("Imagenes/ficha4.png", UriKind.Relative));
                 }
                 break;
+
                 case 4: {
                     tuIMG.Source = new BitmapImage(new Uri("Imagenes/ficha5.png", UriKind.Relative));
                     fichaJugadorIMG.Source = new BitmapImage(new Uri("Imagenes/ficha5.png", UriKind.Relative));
@@ -1014,7 +1045,7 @@ namespace ClienteProyecto {
         /// metodo que aplica el idioma español
         /// </summary>
         private void aplicarIdioma() {
-            oponenteLB.Content=Properties.Recursos.labelOponente;
+            oponenteLB.Content = Properties.Recursos.labelOponente;
             tuLB.Content = Properties.Recursos.labelTu;
             tirarBT.Content = Properties.Recursos.buttonTirar;
         }
@@ -1033,4 +1064,3 @@ namespace ClienteProyecto {
         }
     }
 }
-

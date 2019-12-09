@@ -2,27 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace ClienteProyecto {
+
     /// <summary>
     /// Lógica de interacción para Partida.xaml
     /// </summary>
     public partial class Partida : Window {
         public int idJugador;
         public int idioma;
-        List<String> partidasDatos = new List<string>();
-        List<String> partidasClaveDatos = new List<string>();
-        bool disponibles;
+        private List<String> partidasDatos = new List<string>();
+        private List<String> partidasClaveDatos = new List<string>();
+        private bool disponibles;
+
         public Partida() {
             InitializeComponent();
             cargarPartidas();
@@ -60,7 +53,7 @@ namespace ClienteProyecto {
                 Console.WriteLine("5");
                 this.partidasLT.ItemsSource = partidasDatos;
             } catch (Exception e) {
-                Console.WriteLine(e.Message +"Error en la recoleccion de partidas");
+                Console.WriteLine(e.Message + "Error en la recoleccion de partidas");
             }
         }
 

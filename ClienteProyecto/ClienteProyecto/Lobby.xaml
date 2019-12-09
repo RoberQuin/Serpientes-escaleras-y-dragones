@@ -10,30 +10,29 @@
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="#FFE6EAF7" Offset="0.013"/>
-                <GradientStop Color="#FF93ABEE" Offset="1"/>
-                <GradientStop Color="#FFAABCF1" Offset="0.935"/>
+                <GradientStop Color="#FFE6EAF7" Offset="0.013" />
+                <GradientStop Color="#FF93ABEE" Offset="1" />
+                <GradientStop Color="#FFAABCF1" Offset="0.935" />
             </LinearGradientBrush>
         </Grid.Background>
-        <ListBox x:Name="chatLB" HorizontalAlignment="Left" Height="361" Margin="477,28,0,0" VerticalAlignment="Top" Width="406" SelectionChanged="chatLB_SelectionChanged"/>
-        <ListBox x:Name="usuariosLB" HorizontalAlignment="Left" Height="211" Margin="39,28,0,0" VerticalAlignment="Top" Width="353"/>
-        <Image x:Name="fichaAsignadaIMG" HorizontalAlignment="Left" Height="182" Margin="1062,74,0,0" VerticalAlignment="Top" Width="188"/>
-        <Label x:Name="fichaLB" Content="{x:Static p:Resources.labelTuFicha}" HorizontalAlignment="Left" Margin="1096,35,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <TextBox x:Name="mensajeTF" HorizontalAlignment="Left" Height="39" Margin="477,394,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="317" FontSize="20"/>
-        <Button x:Name="enviarBT" Content="{x:Static p:Resources.buttonEnviar}" HorizontalAlignment="Left" Margin="799,394,0,0" VerticalAlignment="Top" Width="84" Height="39" FontSize="18" Click="enviarTF_Click"/>
-        <Button x:Name="salirBT" Content="{x:Static p:Resources.buttonSalir}" HorizontalAlignment="Left" Margin="10,688,0,10" Width="84" FontSize="18" Click="salirBT_Click"/>
-        <Image x:Name="tableroIMG" HorizontalAlignment="Left" Height="182" Margin="169,477,0,0" VerticalAlignment="Top" Width="188"/>
-        <Label x:Name="tableroLB" Content="{x:Static p:Resources.labelSeleccion}" HorizontalAlignment="Left" Margin="193,438,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <Label x:Name="muerteSubitaLB" Content="{x:Static p:Resources.labelMuerteSubita}" HorizontalAlignment="Left" Margin="558,530,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <TextBox x:Name="muerteSubitaTF" HorizontalAlignment="Left" Height="39" Margin="525,569,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="317" FontSize="20" MaxLength="2"/>
-        <Button x:Name="siguienteBT" Content="{x:Static p:Resources.labelSiguiente}" HorizontalAlignment="Left" Margin="357,542,0,0" VerticalAlignment="Top" Width="84" Height="39" FontSize="18" Click="siguienteBT_Click"/>
-        <Button x:Name="anteriorBT" Content="{x:Static p:Resources.labelAnterior}" HorizontalAlignment="Left" Margin="80,542,0,0" VerticalAlignment="Top" Width="84" Height="39" FontSize="18" Click="anteriorBT_Click"/>
-        <Button x:Name="iniciarJuegoBT" Content="{x:Static p:Resources.buttonIniciarJuego}" HorizontalAlignment="Left" Margin="1087,542,0,0" VerticalAlignment="Top" Width="163" Height="66" FontSize="22" Click="iniciarJuegoBT_Click"/>
-        <Label x:Name="esperandoLB" Content="{x:Static p:Resources.labelEspera}" HorizontalAlignment="Left" Margin="558,613,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <Label x:Name="chatJuegoLB" Content="{x:Static p:Resources.labelChat}" HorizontalAlignment="Left" Margin="614,0,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <Label x:Name="jugadoresLB" Content="{x:Static p:Resources.labelJugadoresActuales}" HorizontalAlignment="Left" Margin="169,0,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <Label x:Name="esperandoJugadoresLB" Content="{x:Static p:Resources.labelEsperandoJugadores}" HorizontalAlignment="Left" Margin="1083,625,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <Label x:Name="nombreTablero" Content="nombreTablero" HorizontalAlignment="Left" Margin="186,664,0,0" VerticalAlignment="Top" FontSize="18"/>
-
+        <ListBox x:Name="chatLB" HorizontalAlignment="Left" Height="361" Margin="477,28,0,0" VerticalAlignment="Top" Width="406" SelectionChanged="chatLB_SelectionChanged" />
+        <ListBox x:Name="usuariosLB" HorizontalAlignment="Left" Height="211" Margin="39,28,0,0" VerticalAlignment="Top" Width="353" />
+        <Image x:Name="fichaAsignadaIMG" HorizontalAlignment="Left" Height="182" Margin="1062,74,0,0" VerticalAlignment="Top" Width="188" />
+        <Label x:Name="fichaLB" Content="{x:Static p:Resources.labelTuFicha}" HorizontalAlignment="Left" Margin="1096,35,0,0" VerticalAlignment="Top" FontSize="18" />
+        <TextBox x:Name="mensajeTF" HorizontalAlignment="Left" Height="39" Margin="477,394,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="317" FontSize="20" />
+        <Button x:Name="enviarBT" Content="{x:Static p:Resources.buttonEnviar}" HorizontalAlignment="Left" Margin="799,394,0,0" VerticalAlignment="Top" Width="84" Height="39" FontSize="18" Click="enviarTF_Click" />
+        <Button x:Name="salirBT" Content="{x:Static p:Resources.buttonSalir}" HorizontalAlignment="Left" Margin="10,688,0,10" Width="84" FontSize="18" Click="salirBT_Click" />
+        <Image x:Name="tableroIMG" HorizontalAlignment="Left" Height="182" Margin="169,477,0,0" VerticalAlignment="Top" Width="188" />
+        <Label x:Name="tableroLB" Content="{x:Static p:Resources.labelSeleccion}" HorizontalAlignment="Left" Margin="193,438,0,0" VerticalAlignment="Top" FontSize="18" />
+        <Label x:Name="muerteSubitaLB" Content="{x:Static p:Resources.labelMuerteSubita}" HorizontalAlignment="Left" Margin="558,530,0,0" VerticalAlignment="Top" FontSize="18" />
+        <TextBox x:Name="muerteSubitaTF" HorizontalAlignment="Left" Height="39" Margin="525,569,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="317" FontSize="20" MaxLength="2" />
+        <Button x:Name="siguienteBT" Content="{x:Static p:Resources.labelSiguiente}" HorizontalAlignment="Left" Margin="357,542,0,0" VerticalAlignment="Top" Width="84" Height="39" FontSize="18" Click="siguienteBT_Click" />
+        <Button x:Name="anteriorBT" Content="{x:Static p:Resources.labelAnterior}" HorizontalAlignment="Left" Margin="80,542,0,0" VerticalAlignment="Top" Width="84" Height="39" FontSize="18" Click="anteriorBT_Click" />
+        <Button x:Name="iniciarJuegoBT" Content="{x:Static p:Resources.buttonIniciarJuego}" HorizontalAlignment="Left" Margin="1087,542,0,0" VerticalAlignment="Top" Width="163" Height="66" FontSize="22" Click="iniciarJuegoBT_Click" />
+        <Label x:Name="esperandoLB" Content="{x:Static p:Resources.labelEspera}" HorizontalAlignment="Left" Margin="558,613,0,0" VerticalAlignment="Top" FontSize="18" />
+        <Label x:Name="chatJuegoLB" Content="{x:Static p:Resources.labelChat}" HorizontalAlignment="Left" Margin="614,0,0,0" VerticalAlignment="Top" FontSize="18" />
+        <Label x:Name="jugadoresLB" Content="{x:Static p:Resources.labelJugadoresActuales}" HorizontalAlignment="Left" Margin="169,0,0,0" VerticalAlignment="Top" FontSize="18" />
+        <Label x:Name="esperandoJugadoresLB" Content="{x:Static p:Resources.labelEsperandoJugadores}" HorizontalAlignment="Left" Margin="1083,625,0,0" VerticalAlignment="Top" FontSize="18" />
+        <Label x:Name="nombreTablero" Content="nombreTablero" HorizontalAlignment="Left" Margin="186,664,0,0" VerticalAlignment="Top" FontSize="18" />
     </Grid>
 </Window>

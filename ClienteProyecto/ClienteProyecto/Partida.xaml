@@ -10,27 +10,27 @@
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="#FFE6EAF7" Offset="0.013"/>
-                <GradientStop Color="#FF93ABEE" Offset="1"/>
-                <GradientStop Color="#FFAABCF1" Offset="0.935"/>
+                <GradientStop Color="#FFE6EAF7" Offset="0.013" />
+                <GradientStop Color="#FF93ABEE" Offset="1" />
+                <GradientStop Color="#FFAABCF1" Offset="0.935" />
             </LinearGradientBrush>
         </Grid.Background>
-        <ListBox x:Name="partidasLT" HorizontalAlignment="Left" Height="520" Margin="10,75,0,0" VerticalAlignment="Top" Width="830"/>
-        <Label x:Name="partidasLB" HorizontalAlignment="Left" Height="60" Margin="10,10,0,0" Content="{x:Static p:Resources.labelPartidas}" VerticalAlignment="Top" Width="212" FontSize="30" FontWeight="Bold"/>
-        <Label x:Name="nombreLB" HorizontalAlignment="Left" Height="44" Margin="974,75,0,0" Content="{x:Static p:Resources.labelNombrePartida}" VerticalAlignment="Top" Width="310" FontSize="25" FontWeight="Regular"/>
+        <ListBox x:Name="partidasLT" HorizontalAlignment="Left" Height="520" Margin="10,75,0,0" VerticalAlignment="Top" Width="830" />
+        <Label x:Name="partidasLB" HorizontalAlignment="Left" Height="60" Margin="10,10,0,0" Content="{x:Static p:Resources.labelPartidas}" VerticalAlignment="Top" Width="212" FontSize="30" FontWeight="Bold" />
+        <Label x:Name="nombreLB" HorizontalAlignment="Left" Height="44" Margin="974,75,0,0" Content="{x:Static p:Resources.labelNombrePartida}" VerticalAlignment="Top" Width="310" FontSize="25" FontWeight="Regular" />
         <Label x:Name="crearLB" HorizontalAlignment="Left" Height="48" Margin="1018,14,0,0" Content="{x:Static p:Resources.labelCrearPartida}" VerticalAlignment="Top" Width="254" FontSize="30" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0.04"/>
-                    <TranslateTransform/>
+                    <ScaleTransform />
+                    <SkewTransform />
+                    <RotateTransform Angle="0.04" />
+                    <TranslateTransform />
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <TextBox x:Name="nombreTB" HorizontalAlignment="Left" Height="44" Margin="930,142,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="354" FontSize="25" MaxLength="10"/>
-        <Button x:Name="crearBT" Content="{x:Static p:Resources.buttonCrearPartida}" HorizontalAlignment="Left" Margin="1034,228,0,0" VerticalAlignment="Top" Width="165" Height="44" FontSize="25" Click="crearBT_Click"/>
-        <Button x:Name="cancelarBT" Content="{x:Static p:Resources.buttonCancelar}" HorizontalAlignment="Left" Margin="1164,664,0,0" VerticalAlignment="Top" Width="165" Height="44" FontSize="25" Click="cancelarBT_Click"/>
-        <Button x:Name="unirseBT" Content="{x:Static p:Resources.buttonUnirse}" HorizontalAlignment="Left" Margin="675,631,0,0" VerticalAlignment="Top" Width="165" Height="44" FontSize="25" Click="unirseBT_Click"/>
+        <TextBox x:Name="nombreTB" HorizontalAlignment="Left" Height="44" Margin="930,142,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="354" FontSize="25" MaxLength="10" />
+        <Button x:Name="crearBT" Content="{x:Static p:Resources.buttonCrearPartida}" HorizontalAlignment="Left" Margin="1034,228,0,0" VerticalAlignment="Top" Width="165" Height="44" FontSize="25" Click="crearBT_Click" />
+        <Button x:Name="cancelarBT" Content="{x:Static p:Resources.buttonCancelar}" HorizontalAlignment="Left" Margin="1164,664,0,0" VerticalAlignment="Top" Width="165" Height="44" FontSize="25" Click="cancelarBT_Click" />
+        <Button x:Name="unirseBT" Content="{x:Static p:Resources.buttonUnirse}" HorizontalAlignment="Left" Margin="675,631,0,0" VerticalAlignment="Top" Width="165" Height="44" FontSize="25" Click="unirseBT_Click" />
     </Grid>
 </Window>

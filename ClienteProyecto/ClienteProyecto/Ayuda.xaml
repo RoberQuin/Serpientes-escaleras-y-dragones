@@ -10,14 +10,13 @@
     <Grid Margin="0,0,2,1">
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="#FFE6EAF7" Offset="0.013"/>
-                <GradientStop Color="#FF93ABEE" Offset="1"/>
-                <GradientStop Color="#FFAABCF1" Offset="0.935"/>
+                <GradientStop Color="#FFE6EAF7" Offset="0.013" />
+                <GradientStop Color="#FF93ABEE" Offset="1" />
+                <GradientStop Color="#FFAABCF1" Offset="0.935" />
             </LinearGradientBrush>
         </Grid.Background>
-        <Label x:Name="tituloTF" Content="Titulo" HorizontalAlignment="Left" Margin="364,22,0,0" VerticalAlignment="Top" FontSize="25"/>
-        <TextBlock x:Name="contenidoTB" HorizontalAlignment="Left" Margin="10,82,0,0" TextWrapping="Wrap" Text="contenido designado" VerticalAlignment="Top" Height="297" Width="769" FontSize="18"/>
-        <Button x:Name="aceptarBT" Content="{x:Static p:Resources.buttonAceptar}" HorizontalAlignment="Left" Margin="341,386,0,0" VerticalAlignment="Top" Width="126" Height="32" Click="aceptarBT_Click"/>
-
+        <Label x:Name="tituloTF" Content="Titulo" HorizontalAlignment="Left" Margin="364,22,0,0" VerticalAlignment="Top" FontSize="25" />
+        <TextBlock x:Name="contenidoTB" HorizontalAlignment="Left" Margin="10,82,0,0" TextWrapping="Wrap" Text="contenido designado" VerticalAlignment="Top" Height="297" Width="769" FontSize="18" />
+        <Button x:Name="aceptarBT" Content="{x:Static p:Resources.buttonAceptar}" HorizontalAlignment="Left" Margin="341,386,0,0" VerticalAlignment="Top" Width="126" Height="32" Click="aceptarBT_Click" />
     </Grid>
 </Window>

@@ -1,40 +1,35 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Reflection;
-using System.Resources;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ClienteProyecto {
+
     /// <summary>
     /// Lógica de interacción para MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window {
-        bool contraseniaVisible = false;
-        int idioma=0;
+        private bool contraseniaVisible = false;
+        private int idioma = 0;
+
         public MainWindow() {
             InitializeComponent();
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-
         }
 
         private void inicioBT_Click(object sender, RoutedEventArgs e) {
             try {
                 igualarContrasenias();
-                String usuario = usuarioTB.Text;
+                String usuario;
+                if (validarCadena(usuarioTB.Text)) {
+                    usuario = usuarioTB.Text;
+                } else {
+                    MessageBox.Show("Error en el usuario");
+                    return;
+                }
                 String contrasenia = ComputeSha256Hash(contraseniaTB.Password);
                 int idJugador;
                 ServiceReference4.Service1Client servicio = new ServiceReference4.Service1Client();
@@ -57,7 +52,7 @@ namespace ClienteProyecto {
                 menuPrincipal.Show();
                 this.Close();
             } catch (System.ServiceModel.EndpointNotFoundException) {
-                MessageBox.Show("Hubo un error al conectar con el servidor","Error en el host");
+                MessageBox.Show("Hubo un error al conectar con el servidor", "Error en el host");
             }
         }
 
@@ -81,12 +76,12 @@ namespace ClienteProyecto {
         /// <param name="rawData">datos a encriptar</param>
         /// <returns></returns>
         private string ComputeSha256Hash(string rawData) {
-            // Create a SHA256   
+            // Create a SHA256
             using (SHA256 sha256Hash = SHA256.Create()) {
-                // ComputeHash - returns byte array  
+                // ComputeHash - returns byte array
                 byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(rawData));
 
-                // Convert byte array to a string   
+                // Convert byte array to a string
                 StringBuilder builder = new StringBuilder();
                 for (int i = 0; i < bytes.Length; i++) {
                     builder.Append(bytes[i].ToString("x2"));
@@ -144,8 +139,8 @@ namespace ClienteProyecto {
             if (idioma != 0) {
                 aplicarIdioma();
                 //idiomaCB.SelectedItem = espanolCI;
-            } else{
-                //idiomaCB.SelectedItem = inglesCI; 
+            } else {
+                //idiomaCB.SelectedItem = inglesCI;
             }
         }
 
@@ -161,10 +156,25 @@ namespace ClienteProyecto {
             registrarBT.Content = Properties.Recursos.buttonRegistrar;
             validarBT.Content = Properties.Recursos.buttonValidar;
             mostrarContraBT.Content = Properties.Recursos.buttonMostrarContrasena;
-            imagenTituloIG.Source = new BitmapImage(new 
+            imagenTituloIG.Source = new BitmapImage(new
                 Uri("Imagenes/TituloImagenesEspanol" +
-                "RD.png",UriKind.Relative));
+                "RD.png", UriKind.Relative));
         }
 
+        public bool validarCadena(String dato) {
+            bool revision = true;
+            foreach (char caracter in dato) {
+                String c = caracter.ToString();
+                int code = Encoding.ASCII.GetBytes(c)[0];
+                if (code < 48 || code > 58) {
+                    if (code != 32) {
+                        if (code < 65 || code > 122 || (code > 91 && code < 97)) {
+                            revision = false;
+                        }
+                    }
+                }
+            }
+            return revision;
+        }
     }
 }

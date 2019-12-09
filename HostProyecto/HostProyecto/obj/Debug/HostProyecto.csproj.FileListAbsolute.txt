@@ -180,3 +180,17 @@ C:\Users\rockm\Desktop\5to Semestre\Tecnologias\26va iteracion - documentacion\H
 C:\Users\rockm\Desktop\5to Semestre\Tecnologias\26va iteracion - documentacion\HostProyecto\HostProyecto\obj\Debug\HostProyecto.csproj.CopyComplete
 C:\Users\rockm\Desktop\5to Semestre\Tecnologias\26va iteracion - documentacion\HostProyecto\HostProyecto\obj\Debug\HostProyecto.dll
 C:\Users\rockm\Desktop\5to Semestre\Tecnologias\26va iteracion - documentacion\HostProyecto\HostProyecto\obj\Debug\HostProyecto.pdb
+C:\Users\rockm\Desktop\5to Semestre\Tecnologias\27va iteracion - Codigo\HostProyecto\HostProyecto\bin\Debug\HostProyecto.dll.config
+C:\Users\rockm\Desktop\5to Semestre\Tecnologias\27va iteracion - Codigo\HostProyecto\HostProyecto\bin\Debug\HostProyecto.dll
+C:\Users\rockm\Desktop\5to Semestre\Tecnologias\27va iteracion - Codigo\HostProyecto\HostProyecto\bin\Debug\HostProyecto.pdb
+C:\Users\rockm\Desktop\5to Semestre\Tecnologias\27va iteracion - Codigo\HostProyecto\HostProyecto\bin\Debug\ADO.dll
+C:\Users\rockm\Desktop\5to Semestre\Tecnologias\27va iteracion - Codigo\HostProyecto\HostProyecto\bin\Debug\EntityFramework.dll
+C:\Users\rockm\Desktop\5to Semestre\Tecnologias\27va iteracion - Codigo\HostProyecto\HostProyecto\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\rockm\Desktop\5to Semestre\Tecnologias\27va iteracion - Codigo\HostProyecto\HostProyecto\bin\Debug\ADO.pdb
+C:\Users\rockm\Desktop\5to Semestre\Tecnologias\27va iteracion - Codigo\HostProyecto\HostProyecto\bin\Debug\ADO.dll.config
+C:\Users\rockm\Desktop\5to Semestre\Tecnologias\27va iteracion - Codigo\HostProyecto\HostProyecto\bin\Debug\EntityFramework.xml
+C:\Users\rockm\Desktop\5to Semestre\Tecnologias\27va iteracion - Codigo\HostProyecto\HostProyecto\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\rockm\Desktop\5to Semestre\Tecnologias\27va iteracion - Codigo\HostProyecto\HostProyecto\obj\Debug\HostProyecto.csprojAssemblyReference.cache
+C:\Users\rockm\Desktop\5to Semestre\Tecnologias\27va iteracion - Codigo\HostProyecto\HostProyecto\obj\Debug\HostProyecto.csproj.CopyComplete
+C:\Users\rockm\Desktop\5to Semestre\Tecnologias\27va iteracion - Codigo\HostProyecto\HostProyecto\obj\Debug\HostProyecto.dll
+C:\Users\rockm\Desktop\5to Semestre\Tecnologias\27va iteracion - Codigo\HostProyecto\HostProyecto\obj\Debug\HostProyecto.pdb

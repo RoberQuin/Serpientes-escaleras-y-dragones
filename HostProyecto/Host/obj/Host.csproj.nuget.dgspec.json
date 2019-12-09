@@ -1,31 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rockm\\Desktop\\5to Semestre\\Tecnologias\\26va iteracion - documentacion\\HostProyecto\\Host\\Host.csproj": {}
+    "C:\\Users\\rockm\\Desktop\\5to Semestre\\Tecnologias\\27va iteracion - Codigo\\HostProyecto\\Host\\Host.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rockm\\Desktop\\5to Semestre\\Tecnologias\\26va iteracion - documentacion\\HostProyecto\\ADO\\ADO.csproj": {
+    "C:\\Users\\rockm\\Desktop\\5to Semestre\\Tecnologias\\27va iteracion - Codigo\\HostProyecto\\ADO\\ADO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rockm\\Desktop\\5to Semestre\\Tecnologias\\26va iteracion - documentacion\\HostProyecto\\ADO\\ADO.csproj",
+        "projectUniqueName": "C:\\Users\\rockm\\Desktop\\5to Semestre\\Tecnologias\\27va iteracion - Codigo\\HostProyecto\\ADO\\ADO.csproj",
         "projectName": "ADO",
-        "projectPath": "C:\\Users\\rockm\\Desktop\\5to Semestre\\Tecnologias\\26va iteracion - documentacion\\HostProyecto\\ADO\\ADO.csproj"
+        "projectPath": "C:\\Users\\rockm\\Desktop\\5to Semestre\\Tecnologias\\27va iteracion - Codigo\\HostProyecto\\ADO\\ADO.csproj"
       },
       "frameworks": {
         "net472": {}
       }
     },
-    "C:\\Users\\rockm\\Desktop\\5to Semestre\\Tecnologias\\26va iteracion - documentacion\\HostProyecto\\HostProyecto\\HostProyecto.csproj": {
+    "C:\\Users\\rockm\\Desktop\\5to Semestre\\Tecnologias\\27va iteracion - Codigo\\HostProyecto\\HostProyecto\\HostProyecto.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rockm\\Desktop\\5to Semestre\\Tecnologias\\26va iteracion - documentacion\\HostProyecto\\HostProyecto\\HostProyecto.csproj",
+        "projectUniqueName": "C:\\Users\\rockm\\Desktop\\5to Semestre\\Tecnologias\\27va iteracion - Codigo\\HostProyecto\\HostProyecto\\HostProyecto.csproj",
         "projectName": "HostProyecto",
-        "projectPath": "C:\\Users\\rockm\\Desktop\\5to Semestre\\Tecnologias\\26va iteracion - documentacion\\HostProyecto\\HostProyecto\\HostProyecto.csproj",
+        "projectPath": "C:\\Users\\rockm\\Desktop\\5to Semestre\\Tecnologias\\27va iteracion - Codigo\\HostProyecto\\HostProyecto\\HostProyecto.csproj",
         "frameworks": {
           "net472": {
             "projectReferences": {
-              "C:\\Users\\rockm\\Desktop\\5to Semestre\\Tecnologias\\26va iteracion - documentacion\\HostProyecto\\ADO\\ADO.csproj": {
-                "projectPath": "C:\\Users\\rockm\\Desktop\\5to Semestre\\Tecnologias\\26va iteracion - documentacion\\HostProyecto\\ADO\\ADO.csproj"
+              "C:\\Users\\rockm\\Desktop\\5to Semestre\\Tecnologias\\27va iteracion - Codigo\\HostProyecto\\ADO\\ADO.csproj": {
+                "projectPath": "C:\\Users\\rockm\\Desktop\\5to Semestre\\Tecnologias\\27va iteracion - Codigo\\HostProyecto\\ADO\\ADO.csproj"
               }
             }
           }
@@ -35,14 +35,14 @@
         "net472": {}
       }
     },
-    "C:\\Users\\rockm\\Desktop\\5to Semestre\\Tecnologias\\26va iteracion - documentacion\\HostProyecto\\Host\\Host.csproj": {
+    "C:\\Users\\rockm\\Desktop\\5to Semestre\\Tecnologias\\27va iteracion - Codigo\\HostProyecto\\Host\\Host.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rockm\\Desktop\\5to Semestre\\Tecnologias\\26va iteracion - documentacion\\HostProyecto\\Host\\Host.csproj",
+        "projectUniqueName": "C:\\Users\\rockm\\Desktop\\5to Semestre\\Tecnologias\\27va iteracion - Codigo\\HostProyecto\\Host\\Host.csproj",
         "projectName": "Host",
-        "projectPath": "C:\\Users\\rockm\\Desktop\\5to Semestre\\Tecnologias\\26va iteracion - documentacion\\HostProyecto\\Host\\Host.csproj",
+        "projectPath": "C:\\Users\\rockm\\Desktop\\5to Semestre\\Tecnologias\\27va iteracion - Codigo\\HostProyecto\\Host\\Host.csproj",
         "packagesPath": "C:\\Users\\rockm\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rockm\\Desktop\\5to Semestre\\Tecnologias\\26va iteracion - documentacion\\HostProyecto\\Host\\obj\\",
+        "outputPath": "C:\\Users\\rockm\\Desktop\\5to Semestre\\Tecnologias\\27va iteracion - Codigo\\HostProyecto\\Host\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -63,8 +63,8 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "C:\\Users\\rockm\\Desktop\\5to Semestre\\Tecnologias\\26va iteracion - documentacion\\HostProyecto\\HostProyecto\\HostProyecto.csproj": {
-                "projectPath": "C:\\Users\\rockm\\Desktop\\5to Semestre\\Tecnologias\\26va iteracion - documentacion\\HostProyecto\\HostProyecto\\HostProyecto.csproj"
+              "C:\\Users\\rockm\\Desktop\\5to Semestre\\Tecnologias\\27va iteracion - Codigo\\HostProyecto\\HostProyecto\\HostProyecto.csproj": {
+                "projectPath": "C:\\Users\\rockm\\Desktop\\5to Semestre\\Tecnologias\\27va iteracion - Codigo\\HostProyecto\\HostProyecto\\HostProyecto.csproj"
               }
             }
           }

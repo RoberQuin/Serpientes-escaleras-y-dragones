@@ -1,51 +1,56 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Mail;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace ClienteProyecto {
+
     /// <summary>
     /// Lógica de interacción para Registro.xaml
     /// </summary>
     public partial class Registro : Window {
-        bool contraseniaVisible = false;
-        int idioma;
+        private bool contraseniaVisible = false;
+        private int idioma;
+
         public Registro() {
             InitializeComponent();
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }
 
         private void aceptarBT_Click(object sender, RoutedEventArgs e) {
-            try { 
+            try {
                 igualarContrasenias();
                 int validacion = validarDatosJugador();
-                if(validacion == 0) {
+                if (validacion == 0) {
                     return;
                 }
                 ServiceReference4.Jugador jugador = new ServiceReference4.Jugador();
                 jugador.contrasenia = ComputeSha256Hash(contraseniaTF.Password);
                 jugador.email = correoTF.Text;
                 jugador.estado = 0;
-                jugador.nombre = nombreTF.Text;
-                jugador.usuario = usuarioTF.Text;
+                if (validarCadena(nombreTF.Text)) {
+                    jugador.nombre = nombreTF.Text;
+                } else {
+                    MessageBox.Show("Error en el nombre");
+                    return;
+                }
+                if (validarCadena(usuarioTF.Text)) {
+                    jugador.usuario = usuarioTF.Text;
+                } else {
+                    MessageBox.Show("Error en el Usuario");
+                    return;
+                }
                 jugador.campania = 0;
                 jugador.fichaCampania = 0;
                 jugador.idioma = 0;
                 jugador.partidasJugadas = 0;
                 jugador.codigo = generarCodigo();
-                enviarCodigo(jugador.codigo);
+                int validacionCorreo = 0;
+                validacionCorreo = enviarCodigo(jugador.codigo);
+                if (validacionCorreo != 0) {
+                    MessageBox.Show("Ocurrio un error al enviar el correo", "Error");
+                    return;
+                }
                 ServiceReference4.Service1Client servicio = new ServiceReference4.Service1Client();
                 servicio.InsertarJugador(jugador);
                 //mandar a la ventana validar
@@ -55,8 +60,6 @@ namespace ClienteProyecto {
                 this.Close();
             } catch (System.ServiceModel.EndpointNotFoundException) {
                 MessageBox.Show("Hubo un error al conectar con el servidor", "Error en el host");
-            } catch (System.FormatException) {
-                MessageBox.Show("Tu correo no tiene un formato valido", "Error en el correo");
             }
         }
 
@@ -70,21 +73,26 @@ namespace ClienteProyecto {
         }
 
         /// <summary>
-        /// metodo que envia el codigo del 
+        /// metodo que envia el codigo del
         /// </summary>
         /// <param name="codigo"></param>
-        private void enviarCodigo(String codigo) {
-            String mensaje;
-            String asunto;
-            if (idioma == 0) {
-                mensaje = Properties.Resources.StringMensaje;
-                asunto = Properties.Resources.StringAsunto;
-            } else {
-                mensaje = Properties.Recursos.StringMensaje;
-                asunto = Properties.Recursos.StringAsunto;
+        private int enviarCodigo(String codigo) {
+            try {
+                String mensaje;
+                String asunto;
+                if (idioma == 0) {
+                    mensaje = Properties.Resources.StringMensaje;
+                    asunto = Properties.Resources.StringAsunto;
+                } else {
+                    mensaje = Properties.Recursos.StringMensaje;
+                    asunto = Properties.Recursos.StringAsunto;
+                }
+                ServiceReference4.Service1Client service = new ServiceReference4.Service1Client();
+                return service.enviarCodigo(codigo, correoTF.Text, asunto, mensaje);
+            } catch (Exception) {
+                MessageBox.Show("No se pudo mandar el correo");
+                return 1;
             }
-            ServiceReference4.Service1Client service = new ServiceReference4.Service1Client();
-            service.enviarCodigo(codigo,correoTF.Text,asunto,mensaje);
         }
 
         /// <summary>
@@ -96,7 +104,6 @@ namespace ClienteProyecto {
             if (idioma != 0) {
                 aplicarIdioma();
             }
-            
         }
 
         /// <summary>
@@ -126,7 +133,7 @@ namespace ClienteProyecto {
             Random random = new Random();
             int randomNumber = random.Next(0, 100);
             for (int i = 0; i < 5; i++) {
-                codigo += random.Next(0,10);
+                codigo += random.Next(0, 10);
             }
             return codigo;
         }
@@ -137,13 +144,13 @@ namespace ClienteProyecto {
         /// <returns></returns>
         private int validarDatosJugador() {
             if (nombreTF.Text.Length < 1) {
-                MessageBox.Show("Existe un error en tu nombre, por favor revisalo","Error");
+                MessageBox.Show("Existe un error en tu nombre, por favor revisalo", "Error");
                 return 0;
             }
             ServiceReference4.Service1Client servicio = new ServiceReference4.Service1Client();
             int yaExiste = servicio.VerificarUsuarioExistente(usuarioTF.Text);
             if (yaExiste == 1) {
-                MessageBox.Show("El usuario ya existe","Ya existe");
+                MessageBox.Show("El usuario ya existe", "Ya existe");
                 return 0;
             }
             if (usuarioTF.Text.Length < 3) {
@@ -168,7 +175,7 @@ namespace ClienteProyecto {
         /// </summary>
         /// <param name="rawData">datos a encriptar</param>
         /// <returns>codigo resultante</returns>
-        private string ComputeSha256Hash(string rawData) {  
+        private string ComputeSha256Hash(string rawData) {
             using (SHA256 sha256Hash = SHA256.Create()) {
                 byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(rawData));
                 StringBuilder builder = new StringBuilder();
@@ -193,7 +200,6 @@ namespace ClienteProyecto {
                 contraseniaVisible = false;
                 mostrarContraBT.Content = "Mostrar Contraseña";
             }
-            
         }
 
         private void cancelarBT_Click(object sender, RoutedEventArgs e) {
@@ -213,8 +219,10 @@ namespace ClienteProyecto {
             foreach (char caracter in dato) {
                 String c = caracter.ToString();
                 int code = Encoding.ASCII.GetBytes(c)[0];
-                if (code < 65 || code > 122 || (code > 91 && code < 97)) {
-                    revision = false;
+                if (code != 32) {
+                    if (code < 65 || code > 122 || (code > 91 && code < 97)) {
+                        revision = false;
+                    }
                 }
             }
             return revision;

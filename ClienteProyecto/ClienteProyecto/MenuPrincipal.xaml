@@ -10,23 +10,23 @@
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="#FFE6EAF7" Offset="0.013"/>
-                <GradientStop Color="#FF93ABEE" Offset="1"/>
-                <GradientStop Color="#FFAABCF1" Offset="0.935"/>
+                <GradientStop Color="#FFE6EAF7" Offset="0.013" />
+                <GradientStop Color="#FF93ABEE" Offset="1" />
+                <GradientStop Color="#FFAABCF1" Offset="0.935" />
             </LinearGradientBrush>
         </Grid.Background>
-        <Image x:Name="tituloIG" Margin="365,10,365,107" Source="Imagenes/TituloImagenesInglesRD.png" Stretch="Fill"/>
-        <Button x:Name="campaniaBT" Content="{x:Static p:Resources.buttonCampania}" HorizontalAlignment="Left" Margin="106,519,0,0" VerticalAlignment="Top" Width="233" Height="80" Background="#57A5FF" FontSize="25" FontWeight="Bold" Click="campaniaBT_Click" MouseEnter="campaniaBT_MouseEnter" MouseLeave="campaniaBT_MouseLeave"/>
-        <Button x:Name="multijugadorBT" Content="{x:Static p:Resources.buttonMultijugador}" HorizontalAlignment="Left" Margin="560,519,0,0" VerticalAlignment="Top" Width="234" Height="80" Background="#57A5FF" FontSize="25" FontWeight="Bold" Click="multijugadorBT_Click" MouseEnter="multijugadorBT_MouseEnter" MouseLeave="multijugadorBT_MouseLeave"/>
-        <Button x:Name="opcionesBT" Content="{x:Static p:Resources.buttonOpciones}" HorizontalAlignment="Left" Margin="998,519,0,0" VerticalAlignment="Top" Width="234" Height="80" Background="#57A5FF" FontSize="25" FontWeight="Bold" Click="opcionesBT_Click" MouseEnter="opcionesBT_MouseEnter" MouseLeave="opcionesBT_MouseLeave"/>
-        <Button x:Name="acercaBT" Content="{x:Static p:Resources.buttonAcercaDe}" HorizontalAlignment="Left" Margin="1106,10,0,0" VerticalAlignment="Top" Width="94" Background="#57A5FF" FontSize="15" FontWeight="Bold" Height="35" Click="acercaBT_Click"/>
-        <Button x:Name="ayudaBT" Content="?" HorizontalAlignment="Left" Margin="1034,10,0,0" VerticalAlignment="Top" Width="39" Background="Transparent" FontSize="20" FontWeight="Bold" Height="35" Click="ayudaBT_Click"/>
-        <Button x:Name="puntuacionesBT" Content="{x:Static p:Resources.buttonPuntuaciones}" HorizontalAlignment="Left" Margin="519,661,0,0" VerticalAlignment="Top" Width="315" Height="36" Background="#57A5FF" FontSize="25" FontWeight="Bold" VerticalContentAlignment="Center" Click="puntuacionesBT_Click"/>
-        <Button x:Name="salirBT" Content="{x:Static p:Resources.buttonSalir}" HorizontalAlignment="Left" Margin="1232,10,0,0" VerticalAlignment="Top" Width="94" Background="#57A5FF" FontSize="15" FontWeight="Bold" Height="35" Click="salirBT_Click"/>
-        <Image HorizontalAlignment="Left" Height="95" Margin="834,642,0,0" VerticalAlignment="Top" Width="90" Source="Imagenes/images.png"/>
-        <Image HorizontalAlignment="Left" Height="95" Margin="424,642,0,0" VerticalAlignment="Top" Width="90" Source="Imagenes/images.png"/>
-        <Image x:Name="dragon2IMG" HorizontalAlignment="Left" Height="100" Margin="794,499,0,0" VerticalAlignment="Top" Width="100" Source="Imagenes/SeleccionDragon.png" Visibility="Hidden"/>
-        <Image x:Name="dragon3IMG" HorizontalAlignment="Left" Height="100" Margin="1232,499,0,0" VerticalAlignment="Top" Width="100" Source="Imagenes/SeleccionDragon.png" Visibility="Hidden"/>
-        <Image x:Name="dragon1IMG" HorizontalAlignment="Left" Height="100" Margin="339,499,0,0" VerticalAlignment="Top" Width="100" Source="Imagenes/SeleccionDragon.png" Visibility="Hidden"/>
+        <Image x:Name="tituloIG" Margin="365,10,365,107" Source="Imagenes/TituloImagenesInglesRD.png" Stretch="Fill" />
+        <Button x:Name="campaniaBT" Content="{x:Static p:Resources.buttonCampania}" HorizontalAlignment="Left" Margin="106,519,0,0" VerticalAlignment="Top" Width="233" Height="80" Background="#57A5FF" FontSize="25" FontWeight="Bold" Click="campaniaBT_Click" MouseEnter="campaniaBT_MouseEnter" MouseLeave="campaniaBT_MouseLeave" />
+        <Button x:Name="multijugadorBT" Content="{x:Static p:Resources.buttonMultijugador}" HorizontalAlignment="Left" Margin="560,519,0,0" VerticalAlignment="Top" Width="234" Height="80" Background="#57A5FF" FontSize="25" FontWeight="Bold" Click="multijugadorBT_Click" MouseEnter="multijugadorBT_MouseEnter" MouseLeave="multijugadorBT_MouseLeave" />
+        <Button x:Name="opcionesBT" Content="{x:Static p:Resources.buttonOpciones}" HorizontalAlignment="Left" Margin="998,519,0,0" VerticalAlignment="Top" Width="234" Height="80" Background="#57A5FF" FontSize="25" FontWeight="Bold" Click="opcionesBT_Click" MouseEnter="opcionesBT_MouseEnter" MouseLeave="opcionesBT_MouseLeave" />
+        <Button x:Name="acercaBT" Content="{x:Static p:Resources.buttonAcercaDe}" HorizontalAlignment="Left" Margin="1106,10,0,0" VerticalAlignment="Top" Width="94" Background="#57A5FF" FontSize="15" FontWeight="Bold" Height="35" Click="acercaBT_Click" />
+        <Button x:Name="ayudaBT" Content="?" HorizontalAlignment="Left" Margin="1034,10,0,0" VerticalAlignment="Top" Width="39" Background="Transparent" FontSize="20" FontWeight="Bold" Height="35" Click="ayudaBT_Click" />
+        <Button x:Name="puntuacionesBT" Content="{x:Static p:Resources.buttonPuntuaciones}" HorizontalAlignment="Left" Margin="519,661,0,0" VerticalAlignment="Top" Width="315" Height="36" Background="#57A5FF" FontSize="25" FontWeight="Bold" VerticalContentAlignment="Center" Click="puntuacionesBT_Click" />
+        <Button x:Name="salirBT" Content="{x:Static p:Resources.buttonSalir}" HorizontalAlignment="Left" Margin="1232,10,0,0" VerticalAlignment="Top" Width="94" Background="#57A5FF" FontSize="15" FontWeight="Bold" Height="35" Click="salirBT_Click" />
+        <Image HorizontalAlignment="Left" Height="95" Margin="834,642,0,0" VerticalAlignment="Top" Width="90" Source="Imagenes/images.png" />
+        <Image HorizontalAlignment="Left" Height="95" Margin="424,642,0,0" VerticalAlignment="Top" Width="90" Source="Imagenes/images.png" />
+        <Image x:Name="dragon2IMG" HorizontalAlignment="Left" Height="100" Margin="794,499,0,0" VerticalAlignment="Top" Width="100" Source="Imagenes/SeleccionDragon.png" Visibility="Hidden" />
+        <Image x:Name="dragon3IMG" HorizontalAlignment="Left" Height="100" Margin="1232,499,0,0" VerticalAlignment="Top" Width="100" Source="Imagenes/SeleccionDragon.png" Visibility="Hidden" />
+        <Image x:Name="dragon1IMG" HorizontalAlignment="Left" Height="100" Margin="339,499,0,0" VerticalAlignment="Top" Width="100" Source="Imagenes/SeleccionDragon.png" Visibility="Hidden" />
     </Grid>
 </Window>

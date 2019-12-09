@@ -1,28 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace ClienteProyecto {
+
     /// <summary>
     /// Lógica de interacción para PartidaMultijugador.xaml
     /// </summary>
     public partial class PartidaMultijugador : Window {
-        List<ServiceReference4.Casilla> casillas = new List<ServiceReference4.Casilla>();
+        private List<ServiceReference4.Casilla> casillas = new List<ServiceReference4.Casilla>();
         public int idioma;
-        InstanceContext contexto;
-        ServiceReference4.ChatClient servidor;
-        ServiceReference4.Service1Client service;
+        private InstanceContext contexto;
+        private ServiceReference4.ChatClient servidor;
+        private ServiceReference4.Service1Client service;
         public List<String> mensajes = new List<string>();
         public List<String> usuarios = new List<string>();
         public string partida;
@@ -34,8 +27,8 @@ namespace ClienteProyecto {
         public int posicionJugador;
         public int estado;
         public int tiro;
-        public int numeroEntrada=0;
-        public int numeroTiro=0;
+        public int numeroEntrada = 0;
+        public int numeroTiro = 0;
 
         /// <summary>
         /// constructor que crea y define las variables inicaiales de la ventana
@@ -56,28 +49,27 @@ namespace ClienteProyecto {
                 case 1: {
                     tableroIMG.Source = new BitmapImage(new Uri("Imagenes/tablero1MT.png", UriKind.Relative));
                     cargarMapa1();
-                    
                 }
                 break;
+
                 case 2: {
                     tableroIMG.Source = new BitmapImage(new Uri("Imagenes/tablero2_1.png", UriKind.Relative));
                     cargarMapa2();
-                    
-                    
                 }
                 break;
+
                 case 3: {
                     tableroIMG.Source = new BitmapImage(new Uri("Imagenes/tablero3.png", UriKind.Relative));
                     cargarMapa3();
-                    
-
                 }
                 break;
+
                 case 4: {
                     tableroIMG.Source = new BitmapImage(new Uri("Imagenes/tablero4.png", UriKind.Relative));
                     cargarMapa4();
                 }
                 break;
+
                 case 5: {
                     tableroIMG.Source = new BitmapImage(new Uri("Imagenes/tablero5.png", UriKind.Relative));
                     cargarMapa5();
@@ -93,27 +85,35 @@ namespace ClienteProyecto {
         /// <param name="fila">fila de destino</param>
         /// <param name="jugador">numero del jugador</param>
         internal void moverFicha(int columna, int fila, int jugador) {
-            Console.WriteLine("El jugador que se mueve es: "+jugador);
-            switch (jugador) {
-                case 1:
-                ficha1IMG.SetValue(Grid.ColumnProperty, columna);
-                ficha1IMG.SetValue(Grid.RowProperty, fila);
-                break;
-                case 2:
-                ficha2IMG.SetValue(Grid.ColumnProperty, columna);
-                ficha2IMG.SetValue(Grid.RowProperty, fila);
-                break;
-                case 3:
-                ficha3IMG.SetValue(Grid.ColumnProperty, columna);
-                ficha3IMG.SetValue(Grid.RowProperty, fila);
-                break;
-                case 4:
-                ficha4IMG.SetValue(Grid.ColumnProperty, columna);
-                ficha4IMG.SetValue(Grid.RowProperty, fila);
-                break;
-                default:
-                Console.WriteLine("Ocurrio un error al saber que ficha mover");
-                break;
+            try {
+                Console.WriteLine("El jugador que se mueve es: " + jugador);
+                switch (jugador) {
+                    case 1:
+                    ficha1IMG.SetValue(Grid.ColumnProperty, columna);
+                    ficha1IMG.SetValue(Grid.RowProperty, fila);
+                    break;
+
+                    case 2:
+                    ficha2IMG.SetValue(Grid.ColumnProperty, columna);
+                    ficha2IMG.SetValue(Grid.RowProperty, fila);
+                    break;
+
+                    case 3:
+                    ficha3IMG.SetValue(Grid.ColumnProperty, columna);
+                    ficha3IMG.SetValue(Grid.RowProperty, fila);
+                    break;
+
+                    case 4:
+                    ficha4IMG.SetValue(Grid.ColumnProperty, columna);
+                    ficha4IMG.SetValue(Grid.RowProperty, fila);
+                    break;
+
+                    default:
+                    Console.WriteLine("Ocurrio un error al saber que ficha mover");
+                    break;
+                }
+            } catch (Exception) {
+                MessageBox.Show("ocurrio un error inesperado", "error");
             }
         }
 
@@ -581,6 +581,8 @@ namespace ClienteProyecto {
                 }
             } catch (FormatException) {
                 MessageBox.Show("Introduce un valor valido para el campo \"muerte subita\"", "Error en dato");
+            } catch (Exception) {
+                MessageBox.Show("ocurrio un error inesperado", "error");
             }
         }
 
@@ -589,12 +591,16 @@ namespace ClienteProyecto {
         /// </summary>
         /// <param name="idJugador">id del jugador</param>
         public void getID(int idJugador) {
-            this.idJugador = idJugador;
-            usuarioN = service.getUsuarioUsuario(idJugador);
-            int numeroConexion;
-            numeroConexion = servidor.unirse(usuarioN, partida);
-            personalizarVentana(numeroConexion);
-            servidor.unirseUsuario(partida);
+            try {
+                this.idJugador = idJugador;
+                usuarioN = service.getUsuarioUsuario(idJugador);
+                int numeroConexion;
+                numeroConexion = servidor.unirse(usuarioN, partida);
+                personalizarVentana(numeroConexion);
+                servidor.unirseUsuario(partida);
+            } catch (Exception) {
+                MessageBox.Show("ocurrio un error inesperado", "error");
+            }
         }
 
         /// <summary>
@@ -633,7 +639,6 @@ namespace ClienteProyecto {
             if (idioma != 0) {
                 aplicarIdioma();
             }
-
         }
 
         /// <summary>
@@ -743,6 +748,8 @@ namespace ClienteProyecto {
                 servidor.pasarTurno(numeroEntrada, partida);
             } catch (FormatException) {
                 MessageBox.Show("Introduce un valor valido para el campo \"muerte subita\"", "Error en dato");
+            } catch (Exception) {
+                MessageBox.Show("ocurrio un error inesperado", "error");
             }
         }
 
@@ -751,6 +758,8 @@ namespace ClienteProyecto {
                 servidor.salirJuego(idJugador, partida, numeroEntrada);
             } catch (FormatException) {
                 MessageBox.Show("Introduce un valor valido para el campo \"muerte subita\"", "Error en dato");
+            } catch (Exception) {
+                MessageBox.Show("ocurrio un error inesperado", "error");
             }
         }
     }

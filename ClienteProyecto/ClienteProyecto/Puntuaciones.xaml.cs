@@ -1,25 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace ClienteProyecto {
+
     /// <summary>
     /// Lógica de interacción para Puntuaciones.xaml
     /// </summary>
     public partial class Puntuaciones : Window {
-        String[] listaPuntuaciones= new string[10];
-        String[] listaUsuarios = new string[10];
-        int idioma;
+        private String[] listaPuntuaciones = new string[10];
+        private String[] listaUsuarios = new string[10];
+        private int idioma;
+
         public Puntuaciones() {
             InitializeComponent();
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
@@ -42,7 +34,7 @@ namespace ClienteProyecto {
         /// </summary>
         private void aplicarIdioma() {
             tituloLB.Content = Properties.Recursos.labelTituloPuntuaciones;
-            aceptarBT.Content= Properties.Recursos.buttonAceptar;
+            aceptarBT.Content = Properties.Recursos.buttonAceptar;
         }
 
         /// <summary>
@@ -61,7 +53,7 @@ namespace ClienteProyecto {
                 listaPuntuaciones1.Add("Puntuacion:");
                 listaUsuarios1.Add("Usuario:");
             }
-            foreach(String puntuacion in listaPuntuaciones) {
+            foreach (String puntuacion in listaPuntuaciones) {
                 listaPuntuaciones1.Add(puntuacion);
             }
             foreach (String usuario in listaUsuarios) {

@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace HostProyecto {
 
-namespace HostProyecto {
-    interface IPartida {
-
+    internal interface IPartida {
     }
-    interface IPartidaCliente {
 
+    internal interface IPartidaCliente {
     }
 }

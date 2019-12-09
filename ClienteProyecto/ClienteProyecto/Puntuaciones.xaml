@@ -10,15 +10,14 @@
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="#FFE6EAF7" Offset="0.013"/>
-                <GradientStop Color="#FF93ABEE" Offset="1"/>
-                <GradientStop Color="#FFAABCF1" Offset="0.935"/>
+                <GradientStop Color="#FFE6EAF7" Offset="0.013" />
+                <GradientStop Color="#FF93ABEE" Offset="1" />
+                <GradientStop Color="#FFAABCF1" Offset="0.935" />
             </LinearGradientBrush>
         </Grid.Background>
-        <Label x:Name="tituloLB" Content="{x:Static p:Resources.labelTituloPuntuaciones}" HorizontalAlignment="Center" Margin="0,28,0,0" VerticalAlignment="Top" FontSize="25" Height="46" Width="344"/>
-        <ListBox x:Name="usuariosLT" HorizontalAlignment="Left" Height="478" Margin="10,79,0,0" VerticalAlignment="Top" Width="383" FontSize="25" FontWeight="Bold"/>
-        <Button x:Name="aceptarBT" Content="{x:Static p:Resources.buttonAceptar}" HorizontalAlignment="Left" Margin="634,27,0,0" VerticalAlignment="Top" Width="148" FontSize="25" Height="44" Click="aceptarBT_Click"/>
-        <ListBox x:Name="puntuacionesLT" HorizontalAlignment="Left" Height="478" Margin="399,79,0,0" VerticalAlignment="Top" Width="383" FontSize="25" FontWeight="Bold"/>
-
+        <Label x:Name="tituloLB" Content="{x:Static p:Resources.labelTituloPuntuaciones}" HorizontalAlignment="Center" Margin="0,28,0,0" VerticalAlignment="Top" FontSize="25" Height="46" Width="344" />
+        <ListBox x:Name="usuariosLT" HorizontalAlignment="Left" Height="478" Margin="10,79,0,0" VerticalAlignment="Top" Width="383" FontSize="25" FontWeight="Bold" />
+        <Button x:Name="aceptarBT" Content="{x:Static p:Resources.buttonAceptar}" HorizontalAlignment="Left" Margin="634,27,0,0" VerticalAlignment="Top" Width="148" FontSize="25" Height="44" Click="aceptarBT_Click" />
+        <ListBox x:Name="puntuacionesLT" HorizontalAlignment="Left" Height="478" Margin="399,79,0,0" VerticalAlignment="Top" Width="383" FontSize="25" FontWeight="Bold" />
     </Grid>
 </Window>

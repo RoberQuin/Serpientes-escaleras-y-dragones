@@ -1,23 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace ClienteProyecto {
+
     /// <summary>
     /// Lógica de interacción para Validar.xaml
     /// </summary>
     public partial class Validar : Window {
-        int idioma;
+        private int idioma;
+
         public Validar() {
             InitializeComponent();
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
@@ -29,14 +19,14 @@ namespace ClienteProyecto {
                 var codigo = codigoTF.Text;
                 ServiceReference4.Service1Client servicio = new ServiceReference4.Service1Client();
                 correcto = servicio.validarUsusario(codigo);
-                if(correcto == true) {
-                    MessageBox.Show("tu cuenta fue validada con exito","exito");
+                if (correcto == true) {
+                    MessageBox.Show("tu cuenta fue validada con exito", "exito");
                     MainWindow mainWindow = new MainWindow();
                     mainWindow.setIdioma(idioma);
                     mainWindow.Show();
                     this.Close();
                 } else {
-                    MessageBox.Show("este codigo no pertenece a ningun usuario\nrevisalo por favor","error");
+                    MessageBox.Show("este codigo no pertenece a ningun usuario\nrevisalo por favor", "error");
                 }
             } catch (System.ServiceModel.EndpointNotFoundException) {
                 MessageBox.Show("Hubo un error al conectar con el servidor", "Error en el host");
@@ -59,7 +49,6 @@ namespace ClienteProyecto {
             if (idioma != 0) {
                 aplicarIdioma();
             }
-
         }
 
         /// <summary>

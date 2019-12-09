@@ -1,17 +1,17 @@
 ﻿using ADO;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
-using System.Text;
 
 namespace HostProyecto {
+
     /// <summary>
     /// interface implementada por el servidor para brindar las funcionalidades de control de cuentas
     /// </summary>
     [ServiceContract]
     public interface IService1 {
+
         /// <summary>
         /// metodo que obtiene a un jugador
         /// </summary>
@@ -27,7 +27,7 @@ namespace HostProyecto {
         /// <returns></returns>
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
-        
+
         /// <summary>
         /// metodo que obtiene un contrato
         /// </summary>
@@ -83,7 +83,7 @@ namespace HostProyecto {
         /// <returns>lista de puntuaciones</returns>
         [OperationContract]
         List<string> getPuntuaciones();
-        
+
         /// <summary>
         /// metodo que obtiene los usuarios  alos que pertenecen las puntuaaciones
         /// </summary>
@@ -92,7 +92,7 @@ namespace HostProyecto {
         List<string> getUsuariosPuntuaciones();
 
         /// <summary>
-        /// metodo que obtiene el atributo usuario de un usaurio 
+        /// metodo que obtiene el atributo usuario de un usaurio
         /// </summary>
         /// <param name="id">id del usuario</param>
         /// <returns>nombre del usuario</returns>
@@ -113,7 +113,7 @@ namespace HostProyecto {
         /// <param name="id"></param>
         /// <param name="campania"></param>
         [OperationContract]
-        void SetCampaniaJugador(int id,int campania);
+        void SetCampaniaJugador(int id, int campania);
 
         /// <summary>
         /// metodo que agrega un mensaje a la lista de mensajes del servidor
@@ -152,7 +152,7 @@ namespace HostProyecto {
         /// <param name="ficha">ficha de un jugador</param>
         /// <returns></returns>
         [OperationContract]
-        int setOpciones(int idJugador,int idioma,int ficha);
+        int setOpciones(int idJugador, int idioma, int ficha);
 
         /// <summary>
         /// metodo que obtiene el idioma preferido de un jugador
@@ -170,14 +170,12 @@ namespace HostProyecto {
         /// <returns></returns>
         [OperationContract]
         int agregarPuntuacionVictoria(int idJugador, int turnos);
-
     }
 
-    
     [DataContract]
     public class CompositeType {
-        bool boolValue = true;
-        string stringValue = "Hello ";
+        private bool boolValue = true;
+        private string stringValue = "Hello ";
 
         [DataMember]
         public bool BoolValue {
@@ -191,9 +189,10 @@ namespace HostProyecto {
             set { stringValue = value; }
         }
     }
+
     [DataContract]
     public class ChatControl {
-        List<String> chat;
+        private List<String> chat;
 
         [DataMember]
         public List<string> Chat { get { return chat; } set { chat = value; } }
@@ -204,32 +203,40 @@ namespace HostProyecto {
     /// </summary>
     [DataContract]
     public class Casilla {
-        int estado;
-        int columna;
-        int fila;
-        int columnaDestino;
-        int filaDestino;
-        int tipo;
-        int numeroCasillla;
-        int casillasCambios;
-        int casillaDestino;
+        private int estado;
+        private int columna;
+        private int fila;
+        private int columnaDestino;
+        private int filaDestino;
+        private int tipo;
+        private int numeroCasillla;
+        private int casillasCambios;
+        private int casillaDestino;
 
         [DataMember]
         public int Estado { get => estado; set => estado = value; }
+
         [DataMember]
         public int Columna { get => columna; set => columna = value; }
+
         [DataMember]
         public int Fila { get => fila; set => fila = value; }
+
         [DataMember]
         public int ColumnaDestino { get => columnaDestino; set => columnaDestino = value; }
+
         [DataMember]
         public int FilaDestino { get => filaDestino; set => filaDestino = value; }
+
         [DataMember]
         public int Tipo { get => tipo; set => tipo = value; }
+
         [DataMember]
         public int NumeroCasillla { get => numeroCasillla; set => numeroCasillla = value; }
+
         [DataMember]
         public int CasillasCambios { get => casillasCambios; set => casillasCambios = value; }
+
         [DataMember]
         public int CasillaDestino { get => casillaDestino; set => casillaDestino = value; }
     }

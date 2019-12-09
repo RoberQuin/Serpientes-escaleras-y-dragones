@@ -1,27 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace ClienteProyecto {
+
     /// <summary>
     /// Lógica de interacción para SeleccionJuego.xaml
     /// </summary>
     public partial class SeleccionJuego : Window {
         public int idJugador;
         public int idioma;
+
         public SeleccionJuego() {
             InitializeComponent();
-            
         }
 
         /// <summary>
@@ -30,7 +22,7 @@ namespace ClienteProyecto {
         private void determinarBotones() {
             ServiceReference4.Service1Client service1Client = new ServiceReference4.Service1Client();
             int progreso = service1Client.GetCampaniaJugador(idJugador);
-            Console.WriteLine("Progreso: "+progreso);
+            Console.WriteLine("Progreso: " + progreso);
             if (progreso == 0) {
                 Console.WriteLine("quito el continuar");
                 continuaBT.IsEnabled = false;

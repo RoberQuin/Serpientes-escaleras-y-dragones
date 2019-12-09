@@ -2,25 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace ClienteProyecto {
+
     /// <summary>
     /// Clase que implementa el Callback de las respuestas del servidor para el cliente
     /// </summary>
     public partial class MiLlamadaDeVuelta : ServiceReference4.IChatCallback {
-        Lobby lobby;
-        PartidaMultijugador PartidaMultijugador;
+        private Lobby lobby;
+        private PartidaMultijugador PartidaMultijugador;
 
         public Lobby Lobby { get => lobby; set => lobby = value; }
         public PartidaMultijugador PartidaMultijugador1 { get => PartidaMultijugador; set => PartidaMultijugador = value; }
@@ -33,7 +26,7 @@ namespace ClienteProyecto {
         /// <param name="numeroJugador">el numero del cliente actual</param>
         public void ganoJugador1(string Jugador, int numeroJugador) {
             Console.WriteLine("mando a mostrar al ganar");
-            MessageBoxTemporal.Show("Ganó: "+Jugador,"Fin del juego",2,true);
+            MessageBoxTemporal.Show("Ganó: " + Jugador, "Fin del juego", 2, true);
             Console.WriteLine("mando a mostrar al ganar");
             Lobby lobby = new Lobby();
             lobby.setIdioma(PartidaMultijugador1.idioma);
@@ -52,39 +45,47 @@ namespace ClienteProyecto {
                 PartidaMultijugador1.estado = 1;
                 switch (PartidaMultijugador1.tablero) {
                     case 1:
-                    PartidaMultijugador1.tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero1D.png",UriKind.Relative));
+                    PartidaMultijugador1.tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero1D.png", UriKind.Relative));
                     break;
+
                     case 2:
-                    PartidaMultijugador1.tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero2_1D.png",UriKind.Relative));
+                    PartidaMultijugador1.tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero2_1D.png", UriKind.Relative));
                     break;
+
                     case 3:
-                    PartidaMultijugador1.tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero3D.png",UriKind.Relative));
+                    PartidaMultijugador1.tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero3D.png", UriKind.Relative));
                     break;
+
                     case 4:
-                    PartidaMultijugador1.tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero4D.png",UriKind.Relative));
+                    PartidaMultijugador1.tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero4D.png", UriKind.Relative));
                     break;
+
                     case 5:
-                    PartidaMultijugador1.tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero5D.png",UriKind.Relative));
+                    PartidaMultijugador1.tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero5D.png", UriKind.Relative));
                     break;
                 }
-            }else
+            } else
             if (PartidaMultijugador1.estado == 1) {
                 PartidaMultijugador1.estado = 0;
                 switch (PartidaMultijugador1.tablero) {
                     case 1:
-                    PartidaMultijugador1.tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero1MT.png",UriKind.Relative));
+                    PartidaMultijugador1.tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero1MT.png", UriKind.Relative));
                     break;
+
                     case 2:
-                    PartidaMultijugador1.tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero2_1.png",UriKind.Relative));
+                    PartidaMultijugador1.tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero2_1.png", UriKind.Relative));
                     break;
+
                     case 3:
-                    PartidaMultijugador1.tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero3.png",UriKind.Relative));
+                    PartidaMultijugador1.tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero3.png", UriKind.Relative));
                     break;
+
                     case 4:
-                    PartidaMultijugador1.tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero4.png",UriKind.Relative));
+                    PartidaMultijugador1.tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero4.png", UriKind.Relative));
                     break;
+
                     case 5:
-                    PartidaMultijugador1.tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero5.png",UriKind.Relative));
+                    PartidaMultijugador1.tableroIMG.Source = new BitmapImage(new Uri("Imagenes/Tablero5.png", UriKind.Relative));
                     break;
                 }
             }
@@ -105,29 +106,35 @@ namespace ClienteProyecto {
         public void pintarDado(int tiro) {
             switch (tiro) {
                 case 1: {
-                    PartidaMultijugador1.dadoIMG.Source = new BitmapImage(new Uri("Imagenes/dado1.png",UriKind.Relative));
+                    PartidaMultijugador1.dadoIMG.Source = new BitmapImage(new Uri("Imagenes/dado1.png", UriKind.Relative));
                 }
                 break;
+
                 case 2: {
-                    PartidaMultijugador1.dadoIMG.Source = new BitmapImage(new Uri("Imagenes/dado2.png",UriKind.Relative));
+                    PartidaMultijugador1.dadoIMG.Source = new BitmapImage(new Uri("Imagenes/dado2.png", UriKind.Relative));
                 }
                 break;
+
                 case 3: {
-                    PartidaMultijugador1.dadoIMG.Source = new BitmapImage(new Uri("Imagenes/dado3.png",UriKind.Relative));
+                    PartidaMultijugador1.dadoIMG.Source = new BitmapImage(new Uri("Imagenes/dado3.png", UriKind.Relative));
                 }
                 break;
+
                 case 4: {
-                    PartidaMultijugador1.dadoIMG.Source = new BitmapImage(new Uri("Imagenes/dado4.png",UriKind.Relative));
+                    PartidaMultijugador1.dadoIMG.Source = new BitmapImage(new Uri("Imagenes/dado4.png", UriKind.Relative));
                 }
                 break;
+
                 case 5: {
-                    PartidaMultijugador1.dadoIMG.Source = new BitmapImage(new Uri("Imagenes/dado5.png",UriKind.Relative));
+                    PartidaMultijugador1.dadoIMG.Source = new BitmapImage(new Uri("Imagenes/dado5.png", UriKind.Relative));
                 }
                 break;
+
                 case 6: {
-                    PartidaMultijugador1.dadoIMG.Source = new BitmapImage(new Uri("Imagenes/dado6.png",UriKind.Relative));
+                    PartidaMultijugador1.dadoIMG.Source = new BitmapImage(new Uri("Imagenes/dado6.png", UriKind.Relative));
                 }
                 break;
+
                 default: {
                     Console.WriteLine("Error inesperado en el valor Random");
                 }
@@ -142,7 +149,7 @@ namespace ClienteProyecto {
         /// <param name="fila">fila a donde se moverá</param>
         /// <param name="jugador">jugador que se moverá</param>
         public void pintarMovimiento(int columna, int fila, int jugador) {
-            PartidaMultijugador1.moverFicha(columna,fila,jugador);
+            PartidaMultijugador1.moverFicha(columna, fila, jugador);
             //PartidaMultijugador1.numeroEntrada = jugador;
         }
 
@@ -160,7 +167,7 @@ namespace ClienteProyecto {
         /// <param name="i">numero del jugador</param>
         /// <param name="tablero">tablero a crear</param>
         /// <param name="muerteSubita">numero de turnos para la muerte subita</param>
-        public void ResiveEntradaMulti(int i,int tablero,int muerteSubita) {
+        public void ResiveEntradaMulti(int i, int tablero, int muerteSubita) {
             PartidaMultijugador1.lobby = lobby;
             PartidaMultijugador1.setServidor(lobby.contexto, lobby.servidor, lobby.service);
             PartidaMultijugador1.tablero = tablero;
@@ -182,12 +189,12 @@ namespace ClienteProyecto {
         /// <param name="usuario">usuario que manda el mensaje</param>
         /// <param name="mensaje">mensaje del usuario</param>
         public void ResiveMensaje(string usuario, string mensaje) {
-            lobby.mensajes.Add(usuario+" : "+mensaje );
+            lobby.mensajes.Add(usuario + " : " + mensaje);
             List<String> dfd = new List<string>();
             lobby.chatLB.ItemsSource = dfd;
             lobby.chatLB.ItemsSource = lobby.mensajes;
             lobby.mensajeTF.Text = "";
-            Console.WriteLine("Usuario: "+usuario+"  Mensaje: "+mensaje);
+            Console.WriteLine("Usuario: " + usuario + "  Mensaje: " + mensaje);
         }
 
         /// <summary>
@@ -229,7 +236,6 @@ namespace ClienteProyecto {
             menuPrincipal.Show();
             PartidaMultijugador1.Close();
             menuPrincipal.mostrarAbandono(0);
-            
         }
 
         /// <summary>
@@ -242,7 +248,6 @@ namespace ClienteProyecto {
             menuPrincipal.Show();
             PartidaMultijugador1.Close();
             menuPrincipal.mostrarAbandono(1);
-            
         }
 
         /// <summary>
@@ -255,7 +260,6 @@ namespace ClienteProyecto {
             menuPrincipal.Show();
             lobby.Close();
             menuPrincipal.mostrarAbandonoLobby(0);
-            
         }
 
         /// <summary>
@@ -269,17 +273,16 @@ namespace ClienteProyecto {
             menuPrincipal.Show();
             lobby.Close();
             menuPrincipal.mostrarAbandonoLobby(1);
-            
         }
 
         /// <summary>
-        /// metodo que agrega a los usuarios que estan en la partida a la lista de 
+        /// metodo que agrega a los usuarios que estan en la partida a la lista de
         /// usuarios del lobby
         /// </summary>
         /// <param name="usuariosDevueltos">lista de ususarios en la partida</param>
         public void ResiveUsuario(String[] usuariosDevueltos) {
             lobby.usuarios.Clear();
-            foreach(String usu in usuariosDevueltos) {
+            foreach (String usu in usuariosDevueltos) {
                 lobby.usuarios.Add(usu);
             }
             //lobby.usuarios = usuariosDevueltos;
@@ -289,7 +292,6 @@ namespace ClienteProyecto {
             if (lobby.usuarios.Count() == 4) {
                 lobby.esperandoJugadoresLB.Visibility = Visibility.Hidden;
                 lobby.iniciarJuegoBT.IsEnabled = true;
-
             }
             //lobby.mensajeTF.Text = "";
             //Console.WriteLine("Usuario: " + usuario );
@@ -314,8 +316,8 @@ namespace ClienteProyecto {
         public string partida;
         public int idJugador;
         public String usuarioN = "null";
-        public int numeroEntrada=0;
-        public int tablero=1;
+        public int numeroEntrada = 0;
+        public int tablero = 1;
 
         /// <summary>
         /// decribe la interaccion de la clase Lobby.xaml
@@ -325,17 +327,15 @@ namespace ClienteProyecto {
             MiLlamadaDeVuelta mi = new MiLlamadaDeVuelta();
             mi.PartidaMultijugador1 = new PartidaMultijugador();
             mi.Lobby = this;
-            contexto = new InstanceContext(mi) ;
+            contexto = new InstanceContext(mi);
             servidor = new ServiceReference4.ChatClient(contexto);
             service = new ServiceReference4.Service1Client();
             this.iniciarJuegoBT.IsEnabled = false;
-            tableroIMG.Source= new BitmapImage(new Uri("Imagenes/tablero1MT.png",UriKind.Relative));
+            tableroIMG.Source = new BitmapImage(new Uri("Imagenes/tablero1MT.png", UriKind.Relative));
             //tablero = 1;
         }
 
-
         private void chatLB_SelectionChanged(object sender, SelectionChangedEventArgs e) {
-
         }
 
         private void enviarTF_Click(object sender, RoutedEventArgs e) {
@@ -345,6 +345,8 @@ namespace ClienteProyecto {
                 }
             } catch (System.ServiceModel.EndpointNotFoundException) {
                 MessageBox.Show("Hubo un error al conectar con el servidor", "Error en el host");
+            } catch (Exception) {
+                MessageBox.Show("ocurrio un error inesperado", "error");
             }
         }
 
@@ -357,8 +359,8 @@ namespace ClienteProyecto {
             usuarioN = service.getUsuarioUsuario(idJugador);
 
             int numeroConexion;
-            numeroEntrada = servidor.getNumeroJugador(usuarioN,partida);
-            numeroConexion = servidor.unirse(usuarioN,partida);
+            numeroEntrada = servidor.getNumeroJugador(usuarioN, partida);
+            numeroConexion = servidor.unirse(usuarioN, partida);
             personalizarVentana(numeroConexion);
             servidor.unirseUsuario(partida);
         }
@@ -369,9 +371,9 @@ namespace ClienteProyecto {
         /// <param name="numeroCliente">numero de usuario</param>
         private void personalizarVentana(int numeroCliente) {
             nombreTablero.Visibility = Visibility.Hidden;
-            if(numeroCliente == 0) {
+            if (numeroCliente == 0) {
                 esperandoLB.Visibility = Visibility.Hidden;
-                fichaAsignadaIMG.Source = new BitmapImage(new Uri("Imagenes/enemigo5.png",UriKind.Relative));
+                fichaAsignadaIMG.Source = new BitmapImage(new Uri("Imagenes/enemigo5.png", UriKind.Relative));
             }
             if (numeroCliente == 1) {
                 if (idioma == 0) {
@@ -391,21 +393,24 @@ namespace ClienteProyecto {
                 esperandoJugadoresLB.Visibility = Visibility.Visible;
                 switch (numeroEntrada) {
                     case 2:
-                    fichaAsignadaIMG.Source = new BitmapImage(new Uri("Imagenes/enemigo1.png",UriKind.Relative));
+                    fichaAsignadaIMG.Source = new BitmapImage(new Uri("Imagenes/enemigo1.png", UriKind.Relative));
                     break;
+
                     case 3:
-                    fichaAsignadaIMG.Source = new BitmapImage(new Uri("Imagenes/enemigo2.png",UriKind.Relative));
+                    fichaAsignadaIMG.Source = new BitmapImage(new Uri("Imagenes/enemigo2.png", UriKind.Relative));
                     break;
+
                     case 4:
-                    fichaAsignadaIMG.Source = new BitmapImage(new Uri("Imagenes/enemigo3.png",UriKind.Relative));
+                    fichaAsignadaIMG.Source = new BitmapImage(new Uri("Imagenes/enemigo3.png", UriKind.Relative));
                     break;
+
                     default:
-                    fichaAsignadaIMG.Source = new BitmapImage(new Uri("Imagenes/enemigo4.png",UriKind.Relative));
-                    break; 
+                    fichaAsignadaIMG.Source = new BitmapImage(new Uri("Imagenes/enemigo4.png", UriKind.Relative));
+                    break;
                 }
             }
-            if (numeroCliente==2) {
-                MessageBox.Show("Lo sentimos la sala esta llena","Error");
+            if (numeroCliente == 2) {
+                MessageBox.Show("Lo sentimos la sala esta llena", "Error");
                 MenuPrincipal menuPrincipal = new MenuPrincipal();
                 menuPrincipal.getID(idJugador);
                 menuPrincipal.setIdioma(idioma);
@@ -423,7 +428,6 @@ namespace ClienteProyecto {
             if (idioma != 0) {
                 aplicarIdioma();
             }
-
         }
 
         /// <summary>
@@ -448,6 +452,8 @@ namespace ClienteProyecto {
                 servidor.salir(partida);
             } catch (System.ServiceModel.EndpointNotFoundException) {
                 MessageBox.Show("Hubo un error al conectar con el servidor", "Error en el host");
+            } catch (Exception) {
+                MessageBox.Show("ocurrio un error inesperado", "error");
             }
         }
 
@@ -475,42 +481,49 @@ namespace ClienteProyecto {
                     servidor.entrarJuego(partida, tablero, int.Parse(muerteSubitaTF.Text));
                 }
                 if (int.Parse(muerteSubitaTF.Text) < 0) {
-                    MessageBox.Show("Introduce un valor valido para el campo \"muerte subita\"","Error en dato");
+                    MessageBox.Show("Introduce un valor valido para el campo \"muerte subita\"", "Error en dato");
                 }
             } catch (System.ServiceModel.EndpointNotFoundException) {
                 MessageBox.Show("Hubo un error al conectar con el servidor", "Error en el host");
             } catch (FormatException) {
                 MessageBox.Show("Introduce un valor valido para el campo \"muerte subita\"", "Error en dato");
+            } catch (Exception) {
+                MessageBox.Show("ocurrio un error inesperado", "error");
             }
         }
 
         private void siguienteBT_Click(object sender, RoutedEventArgs e) {
             switch (tablero) {
                 case 1: {
-                    tableroIMG.Source = new BitmapImage(new Uri("Imagenes/tablero2_1.png",UriKind.Relative));
+                    tableroIMG.Source = new BitmapImage(new Uri("Imagenes/tablero2_1.png", UriKind.Relative));
                     tablero = 2;
                 }
                 break;
+
                 case 2: {
-                    tableroIMG.Source = new BitmapImage(new Uri("Imagenes/tablero3.png",UriKind.Relative));
+                    tableroIMG.Source = new BitmapImage(new Uri("Imagenes/tablero3.png", UriKind.Relative));
                     tablero = 3;
                 }
                 break;
+
                 case 3: {
-                    tableroIMG.Source = new BitmapImage(new Uri("Imagenes/tablero4.png",UriKind.Relative));
+                    tableroIMG.Source = new BitmapImage(new Uri("Imagenes/tablero4.png", UriKind.Relative));
                     tablero = 4;
                 }
                 break;
+
                 case 4: {
-                    tableroIMG.Source = new BitmapImage(new Uri("Imagenes/tablero5.png",UriKind.Relative));
+                    tableroIMG.Source = new BitmapImage(new Uri("Imagenes/tablero5.png", UriKind.Relative));
                     tablero = 5;
                 }
                 break;
+
                 case 5: {
-                    tableroIMG.Source = new BitmapImage(new Uri("Imagenes/tablero1MT.png",UriKind.Relative));
+                    tableroIMG.Source = new BitmapImage(new Uri("Imagenes/tablero1MT.png", UriKind.Relative));
                     tablero = 1;
                 }
                 break;
+
                 default: {
                     Console.WriteLine("Default");
                 }
@@ -521,30 +534,35 @@ namespace ClienteProyecto {
         private void anteriorBT_Click(object sender, RoutedEventArgs e) {
             switch (tablero) {
                 case 1: {
-                    tableroIMG.Source = new BitmapImage(new Uri("Imagenes/tablero5.png",UriKind.Relative));
+                    tableroIMG.Source = new BitmapImage(new Uri("Imagenes/tablero5.png", UriKind.Relative));
                     tablero = 5;
                 }
                 break;
+
                 case 2: {
-                    tableroIMG.Source = new BitmapImage(new Uri("Imagenes/tablero1MT.png",UriKind.Relative));
+                    tableroIMG.Source = new BitmapImage(new Uri("Imagenes/tablero1MT.png", UriKind.Relative));
                     tablero = 1;
                 }
                 break;
+
                 case 3: {
-                    tableroIMG.Source = new BitmapImage(new Uri("Imagenes/tablero2_1.png",UriKind.Relative));
+                    tableroIMG.Source = new BitmapImage(new Uri("Imagenes/tablero2_1.png", UriKind.Relative));
                     tablero = 2;
                 }
                 break;
+
                 case 4: {
-                    tableroIMG.Source = new BitmapImage(new Uri("Imagenes/tablero3.png",UriKind.Relative));
+                    tableroIMG.Source = new BitmapImage(new Uri("Imagenes/tablero3.png", UriKind.Relative));
                     tablero = 3;
                 }
                 break;
+
                 case 5: {
-                    tableroIMG.Source = new BitmapImage(new Uri("Imagenes/tablero4.png",UriKind.Relative));
+                    tableroIMG.Source = new BitmapImage(new Uri("Imagenes/tablero4.png", UriKind.Relative));
                     tablero = 4;
                 }
                 break;
+
                 default: {
                     Console.WriteLine("Default");
                 }
@@ -559,27 +577,30 @@ namespace ClienteProyecto {
         internal void actualizarFicha(int numero) {
             switch (numero) {
                 case 0: {
-                    fichaAsignadaIMG.Source = new BitmapImage(new Uri("Imagenes/enemigo5.png",UriKind.Relative));
+                    fichaAsignadaIMG.Source = new BitmapImage(new Uri("Imagenes/enemigo5.png", UriKind.Relative));
                 }
                 break;
+
                 case 1: {
-                    fichaAsignadaIMG.Source = new BitmapImage(new Uri("Imagenes/enemigo1.png",UriKind.Relative));
+                    fichaAsignadaIMG.Source = new BitmapImage(new Uri("Imagenes/enemigo1.png", UriKind.Relative));
                 }
                 break;
+
                 case 2: {
-                    fichaAsignadaIMG.Source = new BitmapImage(new Uri("Imagenes/enemigo2.png",UriKind.Relative));
+                    fichaAsignadaIMG.Source = new BitmapImage(new Uri("Imagenes/enemigo2.png", UriKind.Relative));
                 }
                 break;
+
                 case 3: {
-                    fichaAsignadaIMG.Source = new BitmapImage(new Uri("Imagenes/enemigo3.png",UriKind.Relative));
+                    fichaAsignadaIMG.Source = new BitmapImage(new Uri("Imagenes/enemigo3.png", UriKind.Relative));
                 }
                 break;
+
                 default: {
-                    fichaAsignadaIMG.Source = new BitmapImage(new Uri("Imagenes/enemigo4.png",UriKind.Relative));
+                    fichaAsignadaIMG.Source = new BitmapImage(new Uri("Imagenes/enemigo4.png", UriKind.Relative));
                 }
                 break;
             }
         }
-
     }
 }

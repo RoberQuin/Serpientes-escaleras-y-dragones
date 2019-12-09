@@ -4,9 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClienteProyecto"
+        xmlns:p="clr-namespace:ClienteProyecto.Properties"
         mc:Ignorable="d"
-        Title="Registro" Height="450" Width="800">
-    <Grid>
+        Title="Registro" WindowState="Maximized" Width="1366" Height="768">
+    <Grid Margin="0,0,2,3">
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="#FFE6EAF7" Offset="0.013"/>
@@ -14,18 +15,25 @@
                 <GradientStop Color="#FFAABCF1" Offset="0.935"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Label Content="Registro" HorizontalAlignment="Left" Margin="76,29,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="Bold"/>
-        <Image Margin="278,-62,258,252" Source="dragon.png" Stretch="Fill"/>
-        <Label Content="Nombre Completo:" HorizontalAlignment="Left" Margin="38,109,0,0" VerticalAlignment="Top" FontSize="25"/>
-        <TextBox x:Name="nombreTF" HorizontalAlignment="Left" Height="38" Margin="38,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="240" FontSize="25"/>
-        <Label Content="Usuario:" HorizontalAlignment="Left" Margin="38,205,0,0" VerticalAlignment="Top" FontSize="25"/>
-        <TextBox x:Name="usuarioTF" HorizontalAlignment="Left" Height="38" Margin="38,246,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="240" FontSize="25"/>
-        <Label Content="Contraseña:" HorizontalAlignment="Left" Margin="38,311,0,0" VerticalAlignment="Top" FontSize="25"/>
-        <TextBox x:Name="contraseniaTF" HorizontalAlignment="Left" Height="38" Margin="38,352,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="240" FontSize="25"/>
-        <Label Content="Correo Electronico:" HorizontalAlignment="Left" Margin="471,126,0,0" VerticalAlignment="Top" FontSize="25"/>
-        <TextBox x:Name="correoTF" HorizontalAlignment="Left" Height="38" Margin="471,167,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="240" FontSize="25"/>
-        <Button x:Name="cancelarBT" Content="Cancelar" HorizontalAlignment="Left" Margin="616,307,0,0" VerticalAlignment="Top" Width="144" Height="56" FontSize="20" FontWeight="Bold"/>
-        <Button x:Name="aceptarBT" Content="Aceptar" HorizontalAlignment="Left" Margin="411,307,0,0" VerticalAlignment="Top" Width="144" Height="56" FontSize="20" FontWeight="Bold" Click="aceptarBT_Click"/>
+        <Label x:Name="registroLB" Content="{x:Static p:Resources.labelRegistrar}" HorizontalAlignment="Left" Margin="76,29,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="Bold"/>
+        <Image Margin="718,-62,194,511" Source="Imagenes/dragon.png" Stretch="Fill"/>
+        <Label x:Name="nombreLB" Content="{x:Static p:Resources.labelNombre}" HorizontalAlignment="Left" Margin="96,118,0,0" VerticalAlignment="Top" FontSize="25" Width="275"/>
+        <TextBox x:Name="nombreTF" HorizontalAlignment="Left" Height="38" Margin="96,159,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="1090" FontSize="25" MaxLength="50" HorizontalScrollBarVisibility="Visible"/>
+        <Label x:Name="usuarioLB" Content="{x:Static p:Resources.labelUsuario}" HorizontalAlignment="Left" Margin="96,214,0,0" VerticalAlignment="Top" FontSize="25" Width="141"/>
+        <TextBox x:Name="usuarioTF" HorizontalAlignment="Left" Height="38" Margin="96,255,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="1090" FontSize="25" MaxLength="15"/>
+        <Label x:Name="contraseniaLB" Content="{x:Static p:Resources.labelContrasena}" HorizontalAlignment="Left" Margin="96,320,0,0" VerticalAlignment="Top" FontSize="25" Width="265"/>
+        <PasswordBox x:Name="contraseniaTF" HorizontalAlignment="Left" Margin="96,361,0,0" VerticalAlignment="Top" Height="38" Width="1090" FontSize="25" MaxLength="15"/>
+        <Label x:Name="correoLB" Content="{x:Static p:Resources.labelCorreo}" HorizontalAlignment="Left" Margin="96,433,0,0" VerticalAlignment="Top" FontSize="25" Width="186"/>
+        <TextBox x:Name="correoTF" HorizontalAlignment="Left" Height="38" Margin="96,475,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="1085" FontSize="25" MaxLength="50"/>
+        <Button x:Name="cancelarBT" Content="{x:Static p:Resources.buttonCancelar}" HorizontalAlignment="Left" Margin="181,552,0,0" VerticalAlignment="Top" Width="338" Height="56" FontSize="20" FontWeight="Bold" Click="cancelarBT_Click"/>
+        <Button x:Name="aceptarBT" Content="{x:Static p:Resources.buttonAceptar}" HorizontalAlignment="Left" Margin="848,552,0,0" VerticalAlignment="Top" Width="338" Height="56" FontSize="20" FontWeight="Bold" Click="aceptarBT_Click"/>
+        <Label x:Name="restriccionUsuarioLB" Content="{x:Static p:Resources.labelRestriccionUsuario}" HorizontalAlignment="Left" Margin="96,293,0,0" VerticalAlignment="Top" Height="27" Width="639"/>
+        <Label x:Name="restriccionNombreLB" Content="{x:Static p:Resources.labelRestriccionNombre}" HorizontalAlignment="Left" Margin="96,196,0,0" VerticalAlignment="Top" Height="27" Width="639"/>
+        <Label x:Name="restriccionContraseniaLB" Content="{x:Static p:Resources.labelRestriccionContrasena}" HorizontalAlignment="Left" Margin="96,401,0,0" VerticalAlignment="Top" Height="27" Width="639"/>
+        <Button x:Name="mostrarContraBT" Content="{x:Static p:Resources.buttonMostrarContrasena}" HorizontalAlignment="Left" Margin="892,404,0,0" VerticalAlignment="Top" Width="289" Click="Button_Click" Height="18"/>
+        <TextBox x:Name="verContraTF" HorizontalAlignment="Left" Height="36" Margin="94,360,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="1087" FontSize="25" Visibility="Hidden" MaxLength="15"/>
+        <Label x:Name="restriccionEmailLB" Content="{x:Static p:Resources.labelRestriccionEmail}" HorizontalAlignment="Left" Margin="96,513,0,0" VerticalAlignment="Top" Height="27" Width="789"/>
+
 
     </Grid>
 </Window>

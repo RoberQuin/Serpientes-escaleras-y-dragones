@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="JugadorSet" EntityType="Model1.Jugador" />
+    <EntitySet Name="PuntuacionSet" EntityType="Model1.Puntuacion" />
+    <AssociationSet Name="PuntuacionJugador" Association="Model1.PuntuacionJugador">
+      <End Role="Puntuacion" EntitySet="PuntuacionSet" />
+      <End Role="Jugador" EntitySet="JugadorSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Jugador">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="contrasenia" Type="String" Nullable="false" />
+    <Property Name="email" Type="String" Nullable="false" />
+    <Property Name="nombre" Type="String" Nullable="false" />
+    <Property Name="usuario" Type="String" Nullable="false" />
+    <Property Name="estado" Type="Int32" Nullable="false" />
+    <Property Name="fichaCampania" Type="Int32" Nullable="false" />
+    <Property Name="idioma" Type="Int32" Nullable="false" />
+    <Property Name="campania" Type="Int32" Nullable="false" />
+    <Property Name="partidasJugadas" Type="Int32" Nullable="false" />
+    <Property Name="codigo" Type="String" Nullable="false" />
+    <NavigationProperty Name="Puntuacion" Relationship="Model1.PuntuacionJugador" FromRole="Jugador" ToRole="Puntuacion" />
+  </EntityType>
+  <EntityType Name="Puntuacion">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="puntuacion" Type="Int32" Nullable="false" />
+    <Property Name="fecha" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Jugador" Relationship="Model1.PuntuacionJugador" FromRole="Puntuacion" ToRole="Jugador" />
+  </EntityType>
+  <Association Name="PuntuacionJugador">
+    <End Type="Model1.Puntuacion" Role="Puntuacion" Multiplicity="*" />
+    <End Type="Model1.Jugador" Role="Jugador" Multiplicity="1" />
+  </Association>
+</Schema>

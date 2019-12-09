@@ -1,0 +1,24 @@
+﻿<Window x:Class="ClienteProyecto.Puntuaciones"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClienteProyecto"
+        xmlns:p="clr-namespace:ClienteProyecto.Properties"
+        mc:Ignorable="d"
+        Title="Puntuaciones" Height="598.007" Width="807.475" HorizontalAlignment="Center">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFE6EAF7" Offset="0.013"/>
+                <GradientStop Color="#FF93ABEE" Offset="1"/>
+                <GradientStop Color="#FFAABCF1" Offset="0.935"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Label x:Name="tituloLB" Content="{x:Static p:Resources.labelTituloPuntuaciones}" HorizontalAlignment="Center" Margin="0,28,0,0" VerticalAlignment="Top" FontSize="25" Height="46" Width="344"/>
+        <ListBox x:Name="usuariosLT" HorizontalAlignment="Left" Height="478" Margin="10,79,0,0" VerticalAlignment="Top" Width="383" FontSize="25" FontWeight="Bold"/>
+        <Button x:Name="aceptarBT" Content="{x:Static p:Resources.buttonAceptar}" HorizontalAlignment="Left" Margin="634,27,0,0" VerticalAlignment="Top" Width="148" FontSize="25" Height="44" Click="aceptarBT_Click"/>
+        <ListBox x:Name="puntuacionesLT" HorizontalAlignment="Left" Height="478" Margin="399,79,0,0" VerticalAlignment="Top" Width="383" FontSize="25" FontWeight="Bold"/>
+
+    </Grid>
+</Window>

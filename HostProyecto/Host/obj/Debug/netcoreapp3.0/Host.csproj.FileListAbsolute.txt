@@ -1,0 +1,50 @@
+C:\Users\rockm\source\repos\HostProyecto\Host\bin\Debug\netcoreapp3.0\Host.exe
+C:\Users\rockm\source\repos\HostProyecto\Host\bin\Debug\netcoreapp3.0\Host.deps.json
+C:\Users\rockm\source\repos\HostProyecto\Host\bin\Debug\netcoreapp3.0\Host.runtimeconfig.json
+C:\Users\rockm\source\repos\HostProyecto\Host\bin\Debug\netcoreapp3.0\Host.runtimeconfig.dev.json
+C:\Users\rockm\source\repos\HostProyecto\Host\bin\Debug\netcoreapp3.0\Host.dll
+C:\Users\rockm\source\repos\HostProyecto\Host\bin\Debug\netcoreapp3.0\Host.pdb
+C:\Users\rockm\source\repos\HostProyecto\Host\bin\Debug\netcoreapp3.0\ADO.dll
+C:\Users\rockm\source\repos\HostProyecto\Host\bin\Debug\netcoreapp3.0\HostProyecto.dll
+C:\Users\rockm\source\repos\HostProyecto\Host\bin\Debug\netcoreapp3.0\System.ServiceModel.dll
+C:\Users\rockm\source\repos\HostProyecto\Host\bin\Debug\netcoreapp3.0\EntityFramework.dll
+C:\Users\rockm\source\repos\HostProyecto\Host\bin\Debug\netcoreapp3.0\System.Xaml.dll
+C:\Users\rockm\source\repos\HostProyecto\Host\bin\Debug\netcoreapp3.0\System.IdentityModel.dll
+C:\Users\rockm\source\repos\HostProyecto\Host\bin\Debug\netcoreapp3.0\System.DirectoryServices.dll
+C:\Users\rockm\source\repos\HostProyecto\Host\bin\Debug\netcoreapp3.0\System.Web.Services.dll
+C:\Users\rockm\source\repos\HostProyecto\Host\bin\Debug\netcoreapp3.0\System.EnterpriseServices.dll
+C:\Users\rockm\source\repos\HostProyecto\Host\bin\Debug\netcoreapp3.0\System.IdentityModel.Selectors.dll
+C:\Users\rockm\source\repos\HostProyecto\Host\bin\Debug\netcoreapp3.0\System.Web.ApplicationServices.dll
+C:\Users\rockm\source\repos\HostProyecto\Host\bin\Debug\netcoreapp3.0\System.Messaging.dll
+C:\Users\rockm\source\repos\HostProyecto\Host\bin\Debug\netcoreapp3.0\System.Runtime.DurableInstancing.dll
+C:\Users\rockm\source\repos\HostProyecto\Host\bin\Debug\netcoreapp3.0\System.ServiceModel.Activation.dll
+C:\Users\rockm\source\repos\HostProyecto\Host\bin\Debug\netcoreapp3.0\System.Design.dll
+C:\Users\rockm\source\repos\HostProyecto\Host\bin\Debug\netcoreapp3.0\System.Runtime.Remoting.dll
+C:\Users\rockm\source\repos\HostProyecto\Host\bin\Debug\netcoreapp3.0\System.Configuration.Install.dll
+C:\Users\rockm\source\repos\HostProyecto\Host\bin\Debug\netcoreapp3.0\System.Windows.Forms.dll
+C:\Users\rockm\source\repos\HostProyecto\Host\bin\Debug\netcoreapp3.0\System.ServiceModel.Activities.dll
+C:\Users\rockm\source\repos\HostProyecto\Host\bin\Debug\netcoreapp3.0\System.Activities.dll
+C:\Users\rockm\source\repos\HostProyecto\Host\bin\Debug\netcoreapp3.0\System.Web.RegularExpressions.dll
+C:\Users\rockm\source\repos\HostProyecto\Host\bin\Debug\netcoreapp3.0\System.Data.OracleClient.dll
+C:\Users\rockm\source\repos\HostProyecto\Host\bin\Debug\netcoreapp3.0\Accessibility.dll
+C:\Users\rockm\source\repos\HostProyecto\Host\bin\Debug\netcoreapp3.0\System.Drawing.Design.dll
+C:\Users\rockm\source\repos\HostProyecto\Host\bin\Debug\netcoreapp3.0\System.Runtime.Serialization.Formatters.Soap.dll
+C:\Users\rockm\source\repos\HostProyecto\Host\bin\Debug\netcoreapp3.0\System.Deployment.dll
+C:\Users\rockm\source\repos\HostProyecto\Host\bin\Debug\netcoreapp3.0\System.Activities.DurableInstancing.dll
+C:\Users\rockm\source\repos\HostProyecto\Host\bin\Debug\netcoreapp3.0\HostProyecto.pdb
+C:\Users\rockm\source\repos\HostProyecto\Host\bin\Debug\netcoreapp3.0\HostProyecto.dll.config
+C:\Users\rockm\source\repos\HostProyecto\Host\bin\Debug\netcoreapp3.0\ADO.pdb
+C:\Users\rockm\source\repos\HostProyecto\Host\bin\Debug\netcoreapp3.0\ADO.dll.config
+C:\Users\rockm\source\repos\HostProyecto\Host\bin\Debug\netcoreapp3.0\EntityFramework.xml
+C:\Users\rockm\source\repos\HostProyecto\Host\bin\Debug\netcoreapp3.0\System.EnterpriseServices.Wrapper.dll
+C:\Users\rockm\source\repos\HostProyecto\Host\obj\Debug\netcoreapp3.0\Host.csprojAssemblyReference.cache
+C:\Users\rockm\source\repos\HostProyecto\Host\obj\Debug\netcoreapp3.0\Host.AssemblyInfoInputs.cache
+C:\Users\rockm\source\repos\HostProyecto\Host\obj\Debug\netcoreapp3.0\Host.AssemblyInfo.cs
+C:\Users\rockm\source\repos\HostProyecto\Host\obj\Debug\netcoreapp3.0\Host.csproj.CopyComplete
+C:\Users\rockm\source\repos\HostProyecto\Host\obj\Debug\netcoreapp3.0\Host.dll
+C:\Users\rockm\source\repos\HostProyecto\Host\obj\Debug\netcoreapp3.0\Host.pdb
+C:\Users\rockm\Desktop\5to Semestre\Tecnologias\10ma iteracion\HostProyecto\Host\obj\Debug\netcoreapp3.0\Host.csprojAssemblyReference.cache
+C:\Users\rockm\Desktop\5to Semestre\Tecnologias\10ma iteracion\HostProyecto\Host\obj\Debug\netcoreapp3.0\Host.AssemblyInfoInputs.cache
+C:\Users\rockm\Desktop\5to Semestre\Tecnologias\10ma iteracion\HostProyecto\Host\obj\Debug\netcoreapp3.0\Host.AssemblyInfo.cs
+C:\Users\rockm\Desktop\5to Semestre\Tecnologias\10ma iteracion\HostProyecto\Host\obj\Debug\netcoreapp3.0\Host.dll
+C:\Users\rockm\Desktop\5to Semestre\Tecnologias\10ma iteracion\HostProyecto\Host\obj\Debug\netcoreapp3.0\Host.pdb

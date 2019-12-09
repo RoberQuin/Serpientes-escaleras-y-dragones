@@ -1,0 +1,31 @@
+﻿<Window x:Class="ClienteProyecto.Opciones"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClienteProyecto"
+        xmlns:p="clr-namespace:ClienteProyecto.Properties"
+        mc:Ignorable="d"
+        Title="Opciones" Height="768" Width="1366" WindowState="Maximized">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFE6EAF7" Offset="0.013"/>
+                <GradientStop Color="#FF93ABEE" Offset="1"/>
+                <GradientStop Color="#FFAABCF1" Offset="0.935"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Label x:Name="seleccionarIdiomaLB" Content="{x:Static p:Resources.labelIdioma}" HorizontalAlignment="Left" Margin="39,115,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label x:Name="seleccionarFichaLB" Content="{x:Static p:Resources.labelFicha}" HorizontalAlignment="Left" Margin="39,251,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Button x:Name="guardarBT" Content="{x:Static p:Resources.buttonGuardar}" HorizontalAlignment="Left" Margin="871,441,0,0" VerticalAlignment="Top" Width="138" FontSize="22" Height="46" Click="guardarBT_Click"/>
+        <Button x:Name="cancelarBT" Content="{x:Static p:Resources.buttonCancelar}" HorizontalAlignment="Left" Margin="628,441,0,0" VerticalAlignment="Top" Width="138" FontSize="22" Height="46" Click="cancelarBT_Click"/>
+        <ComboBox x:Name="idiomaCB" HorizontalAlignment="Left" Margin="51,154,0,0" VerticalAlignment="Top" Width="336" Height="54" FontSize="18">
+            <ComboBoxItem x:Name="inglesCI" Content="English" Selected="inglesCI_Selected"/>
+            <ComboBoxItem x:Name="espanolCI" Content="Español" Selected="espanolCI_Selected"/>
+        </ComboBox>
+        <Image x:Name="fichaIMG" HorizontalAlignment="Left" Height="182" Margin="140,306,0,0" VerticalAlignment="Top" Width="188"/>
+        <Button x:Name="siguienteBT" Content="{x:Static p:Resources.labelSiguiente}" HorizontalAlignment="Left" Margin="328,371,0,0" VerticalAlignment="Top" Width="84" Height="39" FontSize="18" Click="siguienteBT_Click"/>
+        <Button x:Name="anteriorBT" Content="{x:Static p:Resources.labelAnterior}" HorizontalAlignment="Left" Margin="51,371,0,0" VerticalAlignment="Top" Width="84" Height="39" FontSize="18" Click="anteriorBT_Click"/>
+
+    </Grid>
+</Window>

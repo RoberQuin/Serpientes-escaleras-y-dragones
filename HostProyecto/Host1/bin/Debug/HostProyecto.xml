@@ -1,0 +1,398 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HostProyecto</name>
+    </assembly>
+    <members>
+        <member name="T:HostProyecto.IChat">
+            <summary>
+            interfaz implementada por el sefvidor para brindar la funcionalidad de los servicios 
+            del servidor
+            </summary>
+        </member>
+        <member name="M:HostProyecto.IChat.unirse(System.String,System.String)">
+            <summary>
+            Metodo que une a un jugador a una partida
+            </summary>
+            <param name="usuario">usuario a unir a la partida</param>
+            <param name="nombre">nombre de la partida a la que se unira</param>
+            <returns>nuemro del jugador en la partida</returns>
+        </member>
+        <member name="M:HostProyecto.IChat.enviarMensaje(System.String,System.String)">
+            <summary>
+            metodo que envia un mensaje a los demas jugadres en una partida
+            </summary>
+            <param name="mensaje">mensaje</param>
+            <param name="nombre">partida</param>
+        </member>
+        <member name="M:HostProyecto.IChat.enviarMensajeJuego(System.String,System.String)">
+            <summary>
+            metodo que envia un mensaje a los demas jugadres en una partida multijugador
+            </summary>
+            <param name="mensaje">mensaje</param>
+            <param name="nombre">partida</param>
+        </member>
+        <member name="M:HostProyecto.IChat.unirseUsuario(System.String)">
+            <summary>
+            metodo que agrega a los demas jugadores el usuario recien unido
+            </summary>
+            <param name="nombre">nombre de la partida</param>
+        </member>
+        <member name="M:HostProyecto.IChat.salir(System.String)">
+            <summary>
+            metodo para salir de una partida
+            </summary>
+            <param name="nombre">nombre de la partida</param>
+        </member>
+        <member name="M:HostProyecto.IChat.crearPartida(System.String)">
+            <summary>
+            metodo que crea una partida
+            </summary>
+            <param name="nombre">nombre de la partida</param>
+        </member>
+        <member name="M:HostProyecto.IChat.getPartidas">
+            <summary>
+            metodo que obtiene las partidas del servidor
+            </summary>
+            <returns>lista de partidas</returns>
+        </member>
+        <member name="M:HostProyecto.IChat.getPartidasClave">
+            <summary>
+            metodo que oby¿tiene las claves de las partidas del servidor
+            </summary>
+            <returns>lista de claves</returns>
+        </member>
+        <member name="M:HostProyecto.IChat.getNumeroJugador(System.String,System.String)">
+            <summary>
+            metodo que regresa el numero de jugador en la partida
+            </summary>
+            <param name="usuario">nombre del usuario</param>
+            <param name="nombre">nombre de la partida</param>
+            <returns>numero del jugador en la partida</returns>
+        </member>
+        <member name="M:HostProyecto.IChat.entrarJuego(System.String,System.Int32,System.Int32)">
+            <summary>
+            metodo que obtiene el numero de jugador en la partida
+            </summary>
+            <param name="nombre">nobre del jugador</param>
+            <param name="tablero">numero de tablero</param>
+            <param name="muerteSubita">numero de turnos para muerte subita</param>
+        </member>
+        <member name="M:HostProyecto.IChat.pintadDado(System.Int32,System.String)">
+            <summary>
+            metodo que muestra el numero del dado
+            </summary>
+            <param name="tiro">numero de tiro para el dado</param>
+            <param name="nombre">nombre de la partida</param>
+        </member>
+        <member name="M:HostProyecto.IChat.pintarMovimiento1(System.Int32,System.Int32,System.String,System.Int32)">
+            <summary>
+            metodo que manda a llamar un metodo para mover a un jugador
+            </summary>
+            <param name="columna">columa de destino</param>
+            <param name="fila">numero de fila de destino</param>
+            <param name="nombre">nombre de el jugador</param>
+            <param name="numeroEntrada">numero de entrada de jugador a la partida</param>
+        </member>
+        <member name="M:HostProyecto.IChat.pasarTurno(System.Int32,System.String)">
+            <summary>
+            metodo que pasa el turno de un jugador a otro
+            </summary>
+            <param name="jugador">nombre del jugador</param>
+            <param name="nombre">nombre de la partida</param>
+        </member>
+        <member name="M:HostProyecto.IChat.moverDragones(System.Int32,System.String)">
+            <summary>
+            metodo que mueve los dragones de ubicacion
+            </summary>
+            <param name="estado">estado del tablero</param>
+            <param name="nombre">nombre de la partida</param>
+        </member>
+        <member name="M:HostProyecto.IChat.ganoJugador(System.String,System.String)">
+            <summary>
+            metodo que manda a llamar otro metodo que muestra la victoria de un jugador
+            </summary>
+            <param name="jugador">nombre del jugador</param>
+            <param name="partida">nombre de la partida</param>
+        </member>
+        <member name="M:HostProyecto.IChat.salirJuego(System.Int32,System.String,System.Int32)">
+            <summary>
+            metodo que sale del juego de un jugador
+            </summary>
+            <param name="idJugador">id del jugador</param>
+            <param name="partida">nombre de la partida</param>
+            <param name="numeroEntrada"></param>
+        </member>
+        <member name="M:HostProyecto.IChat.getNuevoNumeroJugador(System.String,System.String)">
+            <summary>
+            metodo que obtiene el numero de jugador despues de un cambio en la lista de los jugadores
+            </summary>
+            <param name="usuario">nombre de el usuario</param>
+            <param name="nombre">nombre de la partida</param>
+            <returns>numero de jugador</returns>
+        </member>
+        <member name="T:HostProyecto.IChatCliente">
+            <summary>
+            interfaz implementada por el cliente para recibir los mensajes del servidor
+            </summary>
+        </member>
+        <member name="M:HostProyecto.IChatCliente.ResiveMensaje(System.String,System.String)">
+            <summary>
+            metodo que recibe un mensaje para ecribirlo en el lobby
+            </summary>
+            <param name="usuario">nombre del usuario</param>
+            <param name="mensaje">mensaje del usuario</param>
+        </member>
+        <member name="M:HostProyecto.IChatCliente.ResiveUsuario(System.Collections.Generic.List{System.String})">
+            <summary>
+            metodo que recibe una lista de usuario spara ecribitlos en el lobby
+            </summary>
+            <param name="lista">lista de usuarios</param>
+        </member>
+        <member name="M:HostProyecto.IChatCliente.ResiveSalida(System.Int32)">
+            <summary>
+            metodo que recibe un usuario que quita de la lista del lobby
+            </summary>
+            <param name="numero">numero del jugador que se quita</param>
+        </member>
+        <member name="M:HostProyecto.IChatCliente.ResiveMensajeJuego(System.String,System.String)">
+            <summary>
+            metodo que recibe un mensaje que escribira en el chat del juego
+            </summary>
+            <param name="usuario">nombre del usuario</param>
+            <param name="mensaje">mensaje del usuario</param>
+        </member>
+        <member name="M:HostProyecto.IChatCliente.ResiveUsuarioJuego(System.Collections.Generic.List{System.String})">
+            <summary>
+            metodo que que recibe una lista de usuarios que agregara al juego
+            </summary>
+            <param name="lista">lista de usuarios</param>
+        </member>
+        <member name="M:HostProyecto.IChatCliente.ResiveSalidaJuego(System.Int32)">
+            <summary>
+            metodo que recibe una saida de juego de un usaurio que quitara del juego
+            </summary>
+            <param name="numero">numero de jugador</param>
+        </member>
+        <member name="M:HostProyecto.IChatCliente.ResiveSalidaJuegoAbandona">
+            <summary>
+            metodo que recibe el abandono de un jugador
+            </summary>
+        </member>
+        <member name="M:HostProyecto.IChatCliente.ResiveEntradaMulti(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            metodo que que recibe la entrada de un jugadior al multijugador y lo agrega en la ventana
+            </summary>
+            <param name="i">numero de jugador</param>
+            <param name="tablero">numero de tablero</param>
+            <param name="muerteSubita">numero de turnos para la muerte subita</param>
+        </member>
+        <member name="M:HostProyecto.IChatCliente.pintarDado(System.Int32)">
+            <summary>
+            metodo que recibe el tiro del dado parar mostrarlo en la ventana de multijugador
+            </summary>
+            <param name="tiro"></param>
+        </member>
+        <member name="M:HostProyecto.IChatCliente.pintarMovimiento(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            metodo que recibe las coordenadas de un movimiento que muestra en las ventaanas de multij
+            ugador
+            </summary>
+            <param name="columna">columna de destino</param>
+            <param name="fila">fila de destino</param>
+            <param name="jugador">nombre del jugador</param>
+        </member>
+        <member name="M:HostProyecto.IChatCliente.pasarTurno1">
+            <summary>
+            metodo que pasa un turno a otro jugador
+            </summary>
+        </member>
+        <member name="M:HostProyecto.IChatCliente.quitarTurno">
+            <summary>
+            metodo que quita el turno a un jugador
+            </summary>
+        </member>
+        <member name="M:HostProyecto.IChatCliente.moverDragones1(System.Int32)">
+            <summary>
+            metodo que mueve la posicion de los dragones
+            </summary>
+            <param name="estado">estado del tablero</param>
+        </member>
+        <member name="M:HostProyecto.IChatCliente.ganoJugador1(System.String,System.Int32)">
+            <summary>
+            metodo que muetsra en l aventana que ganó un jugadir
+            </summary>
+            <param name="Jugador">nombre del jugador que ganó</param>
+            <param name="numeroJugador">numero de jugador actua</param>
+        </member>
+        <member name="M:HostProyecto.IChatCliente.ResiveSalidaJuegoLobby(System.Int32)">
+            <summary>
+            metodo que recibe la salida del jugador del lobby
+            </summary>
+            <param name="i">numero de jugador que salió</param>
+        </member>
+        <member name="M:HostProyecto.IChatCliente.ResiveSalidaJuegoAbandonaLobby">
+            <summary>
+            metodo que recibe la salida de un jugador del lobby
+            </summary>
+        </member>
+        <member name="T:HostProyecto.IService1">
+            <summary>
+            interface implementada por el servidor para brindar las funcionalidades de control de cuentas
+            </summary>
+        </member>
+        <member name="M:HostProyecto.IService1.GetJugador(System.Int32)">
+            <summary>
+            metodo que obtiene a un jugador
+            </summary>
+            <param name="value">nombre del jugador</param>
+            <returns></returns>
+        </member>
+        <member name="M:HostProyecto.IService1.GetDataUsingDataContract(HostProyecto.CompositeType)">
+            <summary>
+            metodo que obtiene la informacion del contrato de conexion
+            </summary>
+            <param name="composite">tipo de composisicion</param>
+            <returns></returns>
+        </member>
+        <member name="M:HostProyecto.IService1.GetDataUsingDataContract1(HostProyecto.Casilla)">
+            <summary>
+            metodo que obtiene un contrato
+            </summary>
+            <param name="casilla">casilla</param>
+            <returns></returns>
+        </member>
+        <member name="M:HostProyecto.IService1.InsertarJugador(ADO.Jugador)">
+            <summary>
+            metodo que agrega un nuevo jugador a la base de datos
+            </summary>
+            <param name="jugador">jugador a agregar</param>
+            <returns>resultado de validacion</returns>
+        </member>
+        <member name="M:HostProyecto.IService1.VerificarUsuarioExistente(System.String)">
+            <summary>
+            metodo que valida si un usuario ya existe
+            </summary>
+            <param name="usuario"></param>
+            <returns>resultado de validacion</returns>
+        </member>
+        <member name="M:HostProyecto.IService1.validarUsusario(System.String)">
+            <summary>
+            metodo que vaida a un usuario
+            </summary>
+            <param name="codigo">codigo de validacion</param>
+            <returns>resultado de la validacion</returns>
+        </member>
+        <member name="M:HostProyecto.IService1.login(System.String,System.String)">
+            <summary>
+            metodo que inetnta ingresar al sistema
+            </summary>
+            <param name="usuario">usuario ingresado</param>
+            <param name="contrasenia">contraseña ingresada</param>
+            <returns></returns>
+        </member>
+        <member name="M:HostProyecto.IService1.getEstado(System.Int32)">
+            <summary>
+            metodo que obtiene el esatdo de un jugador
+            </summary>
+            <param name="id">id del jugador</param>
+            <returns>estado del jugador</returns>
+        </member>
+        <member name="M:HostProyecto.IService1.getPuntuaciones">
+            <summary>
+            metdoo que obtiene las puntiuaciones del juego
+            </summary>
+            <returns>lista de puntuaciones</returns>
+        </member>
+        <member name="M:HostProyecto.IService1.getUsuariosPuntuaciones">
+            <summary>
+            metodo que obtiene los usuarios  alos que pertenecen las puntuaaciones
+            </summary>
+            <returns>lista de usuarios</returns>
+        </member>
+        <member name="M:HostProyecto.IService1.getUsuarioUsuario(System.Int32)">
+            <summary>
+            metodo que obtiene el atributo usuario de un usaurio 
+            </summary>
+            <param name="id">id del usuario</param>
+            <returns>nombre del usuario</returns>
+        </member>
+        <member name="M:HostProyecto.IService1.GetCampaniaJugador(System.Int32)">
+            <summary>
+            metodo que obteiene le avance en la campaña de un jugador
+            </summary>
+            <param name="id">id del jugador</param>
+            <returns>avance del jugador</returns>
+        </member>
+        <member name="M:HostProyecto.IService1.SetCampaniaJugador(System.Int32,System.Int32)">
+            <summary>
+            metodo que cambia el estado del jugador en la campaña
+            </summary>
+            <param name="id"></param>
+            <param name="campania"></param>
+        </member>
+        <member name="M:HostProyecto.IService1.agregarMensaje(System.Int32,System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            metodo que agrega un mensaje a la lista de mensajes del servidor
+            </summary>
+            <param name="id">id del jugador</param>
+            <param name="mensaje">mensaje del jugador</param>
+            <param name="mensajes">lista de mensajes</param>
+            <returns></returns>
+        </member>
+        <member name="M:HostProyecto.IService1.enviarCodigo(System.String,System.String,System.String,System.String)">
+            <summary>
+            metodo que envia un codigo al coreo electronico del usuario
+            </summary>
+            <param name="codigo">codigo a envuiar</param>
+            <param name="correo">correo del destino</param>
+            <param name="asunto">asunto del correo</param>
+            <param name="mensaje">mensaje del corre</param>
+            <returns></returns>
+        </member>
+        <member name="M:HostProyecto.IService1.getFichaJugador(System.Int32)">
+            <summary>
+            metodo que btiene la ficha de campaña del jugador
+            </summary>
+            <param name="idJugador">id del juagdor</param>
+            <returns>numero de ficha del jugador</returns>
+        </member>
+        <member name="M:HostProyecto.IService1.setOpciones(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            metodo que cambia las opciones de configuaracion de un jugador
+            </summary>
+            <param name="idJugador">id del jugador</param>
+            <param name="idioma">idioma de un jugador</param>
+            <param name="ficha">ficha de un jugador</param>
+            <returns></returns>
+        </member>
+        <member name="M:HostProyecto.IService1.getIdiomaJugador(System.Int32)">
+            <summary>
+            metodo que obtiene el idioma preferido de un jugador
+            </summary>
+            <param name="idJugador">id del jugador</param>
+            <returns>idioma del jugador</returns>
+        </member>
+        <member name="M:HostProyecto.IService1.agregarPuntuacionVictoria(System.Int32,System.Int32)">
+            <summary>
+            metodo que agrega una puntuacion de victoria a la base de datos
+            </summary>
+            <param name="idJugador">id del jugador</param>
+            <param name="turnos">turnos de victoria</param>
+            <returns></returns>
+        </member>
+        <member name="T:HostProyecto.Casilla">
+            <summary>
+            clase para el manejo de las casillas de un tablero
+            </summary>
+        </member>
+        <member name="T:HostProyecto.Service1">
+            <summary>
+            clase que contine la implementacion de la interfaz IService1
+            </summary>
+            <summary>
+            clase que implementa la interfaz de IChat
+            </summary>
+        </member>
+    </members>
+</doc>

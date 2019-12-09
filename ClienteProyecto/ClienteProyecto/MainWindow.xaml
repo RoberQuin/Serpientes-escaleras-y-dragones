@@ -4,9 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClienteProyecto"
+        xmlns:p="clr-namespace:ClienteProyecto.Properties"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" WindowState="Maximized" Width="1366" Height="768">
+    <Grid Margin="0,0,2,-1">
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="#FFE6EAF7" Offset="0.013"/>
@@ -14,14 +15,22 @@
                 <GradientStop Color="#FFAABCF1" Offset="0.935"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Image Margin="164,0,164,24" Source="LogoJuego.png" Stretch="Fill"/>
-        <Label Content="Usuario:" HorizontalAlignment="Left" Margin="265,214,0,0" VerticalAlignment="Top" FontSize="25"/>
-        <Label Content="Contraseña:" HorizontalAlignment="Left" Margin="265,293,0,0" VerticalAlignment="Top" FontSize="25" Height="44" Width="144"/>
-        <PasswordBox x:Name="contraseniaTB" HorizontalAlignment="Left" Margin="265,342,0,0" VerticalAlignment="Top" Height="36" Width="240" FontSize="25"/>
-        <Button x:Name="inicioBT" Content="Iniciar Sesión" HorizontalAlignment="Left" Margin="600,257,0,0" VerticalAlignment="Top" Width="133" FontSize="20" Height="36" Click="inicioBT_Click"/>
-        <Button x:Name="validarBT" Content="Validar cuenta" HorizontalAlignment="Left" Margin="600,342,0,0" VerticalAlignment="Top" Width="133" FontSize="20" Height="36" Click="validarBT_Click"/>
-        <TextBox x:Name="usuarioTB" HorizontalAlignment="Left" Height="38" Margin="265,255,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="240" FontSize="25"/>
-        <Button x:Name="registrarBT" Content="Registrate" HorizontalAlignment="Left" Margin="22,354,0,0" VerticalAlignment="Top" Width="142" FontSize="20" Height="41" Click="registrarBT_Click"/>
-        <Label Content="¿No tienes una cuenta?" HorizontalAlignment="Left" Margin="10,303,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Image x:Name="imagenTituloIG" Margin="299,14,302,114" Source="Imagenes\tituloImagenesInglesRD.png" Stretch="Fill"/>
+        <Label x:Name="usuarioLB" Content="{x:Static p:Resources.labelUsuario}" HorizontalAlignment="Left" Margin="456,496,0,0" VerticalAlignment="Top" FontSize="25" Width="111"/>
+        <Label x:Name="contraseniaLB" Content="{x:Static p:Resources.labelContrasena}" HorizontalAlignment="Left" Margin="456,575,0,0" VerticalAlignment="Top" FontSize="25" Height="44" Width="266"/>
+        <TextBox x:Name="usuarioTB" HorizontalAlignment="Left" Height="38" Margin="456,537,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="443" FontSize="25" MaxLength="15"/>
+        <PasswordBox x:Name="contraseniaTB" HorizontalAlignment="Left" Margin="456,624,0,0" VerticalAlignment="Top" Height="36" Width="443" FontSize="25" MaxLength="15"/>
+        <TextBox x:Name="verContraTF" HorizontalAlignment="Left" Height="36" Margin="456,624,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="443" FontSize="20" Visibility="Hidden" MaxLength="15"/>
+        <Button x:Name="inicioBT" Content="{x:Static p:Resources.buttonIniciarSesion}" HorizontalAlignment="Left" Margin="1084,626,0,0" VerticalAlignment="Top" Width="201" FontSize="20" Height="57" Click="inicioBT_Click"/>
+        <Button x:Name="validarBT" Content="{x:Static p:Resources.buttonValidar}" HorizontalAlignment="Left" Margin="36,626,0,0" VerticalAlignment="Top" Width="295" FontSize="20" Height="54" Click="validarBT_Click"/>
+        <Button x:Name="registrarBT" Content="{x:Static p:Resources.buttonRegistrar}" HorizontalAlignment="Left" Margin="36,577,0,0" VerticalAlignment="Top" Width="295" FontSize="20" Height="39" Click="registrarBT_Click"/>
+        <Label x:Name="registroLB" Content="{x:Static p:Resources.labelRegistro}" HorizontalAlignment="Left" Margin="36,538,0,0" VerticalAlignment="Top" FontSize="18" Width="295"/>
+        <Button x:Name="mostrarContraBT" Content="{x:Static p:Resources.buttonMostrarContrasena}" HorizontalAlignment="Left" Margin="672,665,0,0" VerticalAlignment="Top" Width="227" Click="Button_Click" Height="18"/>
+        <ComboBox x:Name="idiomaCB" HorizontalAlignment="Left" Margin="1084,74,0,0" VerticalAlignment="Top" Width="208" Height="46" FontSize="18">
+            <ComboBoxItem x:Name="inglesCI" Content="English" Selected="inglesCI_Selected"/>
+            <ComboBoxItem x:Name="espanolCI" Content="Español" Selected="espanolCI_Selected"/>
+        </ComboBox>
+        <Label x:Name="idiomaLB" Content="{x:Static p:Resources.labelIdioma}" HorizontalAlignment="Right" Margin="0,25,106,0" VerticalAlignment="Top" FontSize="18" Height="31" Width="113"/>
+
     </Grid>
 </Window>

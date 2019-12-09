@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/HostProyecto" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/HostProyecto" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="CompositeType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BoolValue" type="xs:boolean" />
+      <xs:element minOccurs="0" name="StringValue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CompositeType" nillable="true" type="tns:CompositeType" />
+  <xs:complexType name="Casilla">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CasillaDestino" type="xs:int" />
+      <xs:element minOccurs="0" name="CasillasCambios" type="xs:int" />
+      <xs:element minOccurs="0" name="Columna" type="xs:int" />
+      <xs:element minOccurs="0" name="ColumnaDestino" type="xs:int" />
+      <xs:element minOccurs="0" name="Estado" type="xs:int" />
+      <xs:element minOccurs="0" name="Fila" type="xs:int" />
+      <xs:element minOccurs="0" name="FilaDestino" type="xs:int" />
+      <xs:element minOccurs="0" name="NumeroCasillla" type="xs:int" />
+      <xs:element minOccurs="0" name="Tipo" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Casilla" nillable="true" type="tns:Casilla" />
+</xs:schema>

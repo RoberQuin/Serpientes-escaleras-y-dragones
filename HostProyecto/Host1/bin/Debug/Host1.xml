@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Host1</name>
+    </assembly>
+    <members>
+        <member name="T:Host1.Program">
+            <summary>
+            clase que levanta el servidor para exhibir las interfaces
+            </summary>
+        </member>
+        <member name="M:Host1.Program.Main(System.String[])">
+            <summary>
+            metodo que levanta las interfaces para ser usadas remotamente desde el cliente
+            </summary>
+            <param name="args"></param>
+        </member>
+    </members>
+</doc>

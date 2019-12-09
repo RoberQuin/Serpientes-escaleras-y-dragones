@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\rockm\source\repos\ClienteProyecto\ClienteProyecto\obj\Debug\
+C:\Users\rockm\Desktop\5to Semestre\Tecnologias\26va iteracion - documentacion\ClienteProyecto\ClienteProyecto\obj\Debug\
 ClienteProyecto
 none
 false
 DEBUG;TRACE
-C:\Users\rockm\source\repos\ClienteProyecto\ClienteProyecto\App.xaml
-71337815793
+C:\Users\rockm\Desktop\5to Semestre\Tecnologias\26va iteracion - documentacion\ClienteProyecto\ClienteProyecto\App.xaml
+151051313531
 
-11-1506852360
-13-1505183044
-.xaml;Lobby.xaml;MainWindow.xaml;MenuPrincipal.xaml;Registro.xaml;Validar.xaml;Window1.xaml;
+26-400371209
+181718516489
+.xaml;Ayuda.xaml;Historia.xaml;JuegoCampaña.xaml;Lobby.xaml;MainWindow.xaml;MenuPrincipal.xaml;Opciones.xaml;Partida.xaml;PartidaMultijugador.xaml;Puntuaciones.xaml;Registro.xaml;SeleccionJuego.xaml;Validar.xaml;Window1.xaml;
 
 False
 

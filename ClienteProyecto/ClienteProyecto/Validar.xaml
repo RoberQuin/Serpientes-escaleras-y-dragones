@@ -4,8 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClienteProyecto"
+        xmlns:p="clr-namespace:ClienteProyecto.Properties"
         mc:Ignorable="d"
-        Title="Validar" Height="367.775" Width="808.97">
+        Title="Validar" WindowState="Maximized" Width="1366" Height="768">
     <Grid Margin="-1,0,-3,1" RenderTransformOrigin="0.5,0.5">
         <Grid.RenderTransform>
             <TransformGroup>
@@ -22,11 +23,11 @@
                 <GradientStop Color="#FFAABCF1" Offset="0.935"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Label Content="Se te envio un correo de verificacion, ingresa el numero que te mandamos aqui" HorizontalAlignment="Left" Margin="64,10,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
-        <Label Content="Codigo de verificacion:" HorizontalAlignment="Left" Margin="268,87,0,0" VerticalAlignment="Top" FontSize="25" FontWeight="Bold"/>
-        <TextBlock x:Name="codigoTB" HorizontalAlignment="Left" Margin="238,151,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="20" Height="37" Width="335" Background="White"/>
-        <Button x:Name="cancelarBT" Content="Cancelar" HorizontalAlignment="Left" Margin="573,256,0,0" VerticalAlignment="Top" Width="105" FontSize="20" Height="38"/>
-        <Button x:Name="aceptarBT" Content="Aceptar" HorizontalAlignment="Left" Margin="151,256,0,0" VerticalAlignment="Top" Width="105" FontSize="20" Height="38"/>
+        <Label x:Name="envioLB" Content="{x:Static p:Resources.labelVerificacion}" HorizontalAlignment="center" Margin="356,158,256,0" VerticalAlignment="Top" FontSize="25" FontWeight="Bold" Height="38" Width="750"/>
+        <Label x:Name="verificacionLB" Content="{x:Static p:Resources.labelCodigoVerificacion}" HorizontalAlignment="Center" Margin="549,240,420,0" VerticalAlignment="Top" FontSize="32" FontWeight="Bold" Height="49" Width="393"/>
+        <TextBox x:Name="codigoTF" HorizontalAlignment="Left" Margin="468,341,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="25" Height="48" Width="474" Background="White" TextAlignment="Center" MaxLength="5"/>
+        <Button x:Name="cancelarBT" Content="{x:Static p:Resources.buttonCancelar}"  HorizontalAlignment="Left" Margin="181,552,0,0" VerticalAlignment="Top" Width="338" Height="56" FontSize="20" FontWeight="Bold" Click="cancelarBT_Click"/>
+        <Button x:Name="aceptarBT" Content="{x:Static p:Resources.buttonAceptar}" HorizontalAlignment="Left" Margin="848,552,0,0" VerticalAlignment="Top" Width="338" Height="56" FontSize="20" FontWeight="Bold" Click="aceptarBT_Click"/>
 
     </Grid>
 </Window>

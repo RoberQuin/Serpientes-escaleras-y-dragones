@@ -1,0 +1,27 @@
+﻿<Window x:Class="ClienteProyecto.SeleccionJuego"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClienteProyecto"
+        xmlns:p="clr-namespace:ClienteProyecto.Properties"
+        mc:Ignorable="d"
+        Title="SeleccionJuego" WindowState="Maximized" Width="1366" Height="768">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFE6EAF7" Offset="0.013"/>
+                <GradientStop Color="#FF93ABEE" Offset="1"/>
+                <GradientStop Color="#FFAABCF1" Offset="0.935"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Button x:Name="nuevaBT" Content="New Campaign" HorizontalAlignment="Left" VerticalAlignment="Top" Width="279" Margin="279,522,0,0" Height="91" Background="#57A5FF" FontSize="25" FontWeight="Bold" Click="Button_Click" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave"/>
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="78" Margin="10,663,0,0" Height="64" Click="Button_Click_2">
+            <Image Source="Imagenes/back.png" Height="50" Width="47"/>
+        </Button>
+        <Button x:Name="continuaBT" Content="{x:Static p:Resources.buttonContinuar}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="266" Margin="835,517,0,0" Height="96" Background="#57A5FF" FontSize="25" FontWeight="Bold" Click="Button_Click_1" MouseEnter="Button_MouseEnter_1" MouseLeave="Button_MouseLeave_1"/>
+        <Image x:Name="logoIMG" Source="Imagenes/TituloImagenesInglesRD.png"  HorizontalAlignment="Left" Height="507" Margin="426,10,0,0" VerticalAlignment="Top" Width="558"/>
+        <Image x:Name="dragon1IMG" HorizontalAlignment="Left" Height="100" Margin="585,513,0,0" VerticalAlignment="Top" Width="100" Source="Imagenes/SeleccionDragon.png" Visibility="Hidden"/>
+        <Image x:Name="dragon2IMG" HorizontalAlignment="Left" Height="100" Margin="1127,513,0,0" VerticalAlignment="Top" Width="100" Source="Imagenes/SeleccionDragon.png" Visibility="Hidden"/>
+    </Grid>
+</Window>

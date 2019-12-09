@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Model1StoreContainer">
+    <EntitySet Name="JugadorSet" EntityType="Model1.Store.JugadorSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PuntuacionSet" EntityType="Model1.Store.PuntuacionSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="PuntuacionJugador" Association="Model1.Store.PuntuacionJugador">
+      <End Role="Puntuacion" EntitySet="PuntuacionSet" />
+      <End Role="Jugador" EntitySet="JugadorSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="JugadorSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="contrasenia" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="usuario" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="estado" Type="int" Nullable="false" />
+    <Property Name="fichaCampania" Type="int" Nullable="false" />
+    <Property Name="idioma" Type="int" Nullable="false" />
+    <Property Name="campania" Type="int" Nullable="false" />
+    <Property Name="partidasJugadas" Type="int" Nullable="false" />
+    <Property Name="codigo" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PuntuacionSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="puntuacion" Type="int" Nullable="false" />
+    <Property Name="fecha" Type="datetime" Nullable="false" />
+    <Property Name="Jugador_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="PuntuacionJugador">
+    <End Role="Puntuacion" Type="Model1.Store.PuntuacionSet" Multiplicity="*" />
+    <End Role="Jugador" Type="Model1.Store.JugadorSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Jugador">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Puntuacion">
+        <PropertyRef Name="Jugador_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

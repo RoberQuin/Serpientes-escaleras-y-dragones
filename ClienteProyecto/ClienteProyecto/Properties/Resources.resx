@@ -46,7 +46,7 @@
     
     mimetype: application/x-microsoft.net.object.binary.base64
     value   : The object must be serialized with 
-            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
     
     mimetype: application/x-microsoft.net.object.soap.base64
@@ -60,6 +60,7 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
@@ -68,9 +69,10 @@
               <xsd:sequence>
                 <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="name" use="required" type="xsd:string" />
               <xsd:attribute name="type" type="xsd:string" />
               <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
@@ -85,9 +87,10 @@
                 <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
                 <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
               <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
               <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
@@ -109,9 +112,214 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="buttonAceptar" xml:space="preserve">
+    <value>Acept</value>
+  </data>
+  <data name="buttonAcercaDe" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="buttonCampania" xml:space="preserve">
+    <value>Campaign</value>
+  </data>
+  <data name="buttonCancelar" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="buttonContinuar" xml:space="preserve">
+    <value>Continue campaign</value>
+  </data>
+  <data name="buttonCrearPartida" xml:space="preserve">
+    <value>Create Game</value>
+  </data>
+  <data name="buttonEnviar" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="buttonGuardar" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="buttonInfo" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="buttonIniciarJuego" xml:space="preserve">
+    <value>Start game</value>
+  </data>
+  <data name="buttonIniciarSesion" xml:space="preserve">
+    <value>Log in</value>
+  </data>
+  <data name="buttonMostrarContrasena" xml:space="preserve">
+    <value>Show password</value>
+  </data>
+  <data name="buttonMultijugador" xml:space="preserve">
+    <value>Multiplayer</value>
+  </data>
+  <data name="buttonNueva" xml:space="preserve">
+    <value>New campaign</value>
+  </data>
+  <data name="buttonOpciones" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="buttonPuntuaciones" xml:space="preserve">
+    <value>Top scores</value>
+  </data>
+  <data name="buttonRegistrar" xml:space="preserve">
+    <value>Sign up</value>
+  </data>
+  <data name="buttonRegresar" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="buttonSalir" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="buttonTirar" xml:space="preserve">
+    <value>Roll dice</value>
+  </data>
+  <data name="buttonUnirse" xml:space="preserve">
+    <value>Join</value>
+  </data>
+  <data name="buttonValidar" xml:space="preserve">
+    <value>Validate your account</value>
+  </data>
+  <data name="labelAnterior" xml:space="preserve">
+    <value>Previous</value>
+  </data>
+  <data name="labelChat" xml:space="preserve">
+    <value>Game Chat:</value>
+  </data>
+  <data name="labelCodigo" xml:space="preserve">
+    <value>Verification code:</value>
+  </data>
+  <data name="labelCodigoVerificacion" xml:space="preserve">
+    <value>verification code</value>
+  </data>
+  <data name="labelContrasena" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="labelCorreo" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="labelCrearPartida" xml:space="preserve">
+    <value>Create Game</value>
+  </data>
+  <data name="labelEspera" xml:space="preserve">
+    <value>Waiting for the leader of the game</value>
+  </data>
+  <data name="labelEsperandoJugadores" xml:space="preserve">
+    <value>Wating for players...</value>
+  </data>
+  <data name="labelExplicacion1" xml:space="preserve">
+    <value>a short time ago, the different dictators of time got together to rule all the timespace, only you can stop it traveling in time
+and stopping them in their time</value>
+    <comment>1</comment>
+  </data>
+  <data name="labelExplicacion2" xml:space="preserve">
+    <value>Your first target is in a lost civilization 73 million years ago, Wart, leader of civilization, defeat him and get his power</value>
+  </data>
+  <data name="labelExplicacion3" xml:space="preserve">
+    <value>Your next target is Emperor Calus, from the year 200, defeat him to get the power to travel to the next location</value>
+  </data>
+  <data name="labelFicha" xml:space="preserve">
+    <value>Select a tab for campaign mode</value>
+  </data>
+  <data name="labelFondo" xml:space="preserve">
+    <value>Select a background</value>
+  </data>
+  <data name="labelIdioma" xml:space="preserve">
+    <value>Languaje</value>
+  </data>
+  <data name="labelJugadores" xml:space="preserve">
+    <value>Players</value>
+  </data>
+  <data name="labelJugadoresActuales" xml:space="preserve">
+    <value>Players:</value>
+  </data>
+  <data name="labelMuerteSubita" xml:space="preserve">
+    <value>Number of shifts for sudden death</value>
+  </data>
+  <data name="labelNombre" xml:space="preserve">
+    <value>Full name</value>
+  </data>
+  <data name="labelNombrePartida" xml:space="preserve">
+    <value>Game Name</value>
+  </data>
+  <data name="labelNoTurno" xml:space="preserve">
+    <value>It´s turn of</value>
+  </data>
+  <data name="labelOponente" xml:space="preserve">
+    <value>Oponent</value>
+  </data>
+  <data name="labelPartidas" xml:space="preserve">
+    <value>Games:</value>
+  </data>
+  <data name="labelRegistrar" xml:space="preserve">
+    <value>Registration</value>
+  </data>
+  <data name="labelRegistro" xml:space="preserve">
+    <value>You don't have an account?</value>
+  </data>
+  <data name="labelRestriccionContrasena" xml:space="preserve">
+    <value>Minimum 5 characters, Maximum 15</value>
+  </data>
+  <data name="labelRestriccionEmail" xml:space="preserve">
+    <value>Example: mail@gmail.com, no more than 50 characters</value>
+  </data>
+  <data name="labelRestriccionNombre" xml:space="preserve">
+    <value>Minimum 1 characters, Maximum 50</value>
+  </data>
+  <data name="labelRestriccionUsuario" xml:space="preserve">
+    <value>Minimum 3 characters, Maximum 15</value>
+  </data>
+  <data name="labelSeleccion" xml:space="preserve">
+    <value>Select a board</value>
+  </data>
+  <data name="labelSiguiente" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="labelTablero" xml:space="preserve">
+    <value>Actual board</value>
+  </data>
+  <data name="labelTituloPuntuaciones" xml:space="preserve">
+    <value>Games won faster</value>
+  </data>
+  <data name="labelTu" xml:space="preserve">
+    <value>You</value>
+  </data>
+  <data name="labelTuFicha" xml:space="preserve">
+    <value>This is your tab</value>
+  </data>
+  <data name="labelTurno" xml:space="preserve">
+    <value>It´s your turn</value>
+  </data>
+  <data name="labelUsuario" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="labelVerificacion" xml:space="preserve">
+    <value>A verification code was sent to your email, write it here</value>
+  </data>
+  <data name="StringAsunto" xml:space="preserve">
+    <value>Verify your account</value>
+  </data>
+  <data name="StringMensaje" xml:space="preserve">
+    <value>Thanks for using Snakes Stairs and Dragons
+to use your account enter the following code in the verification window
+Code:</value>
+  </data>
+  <data name="windowCampaña" xml:space="preserve">
+    <value>Game</value>
+  </data>
+  <data name="windowInicioSesion" xml:space="preserve">
+    <value>Log in</value>
+  </data>
+  <data name="windowMenuPrincipal" xml:space="preserve">
+    <value>Main menu</value>
+  </data>
+  <data name="windowRegistro" xml:space="preserve">
+    <value>Registry</value>
+  </data>
+  <data name="windowVerificar" xml:space="preserve">
+    <value>Validate</value>
+  </data>
 </root>
